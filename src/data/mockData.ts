@@ -9,53 +9,53 @@ export const THEATER_FORMATS: TheaterFormat[] = [
   {
     id: 'intimo',
     title: 'Formato Íntimo',
-    subtitle: 'Encuentro Cercano de Aventura Dramática',
+    subtitle: 'Encuentro cercano para grupos pequeños',
     capacity: 'Hasta 20 participantes',
-    recommendedSpace: 'Salón de clases regular, biblioteca o sala de lectura',
-    description: 'Montaje acústico y minimalista que transforma un aula convencional en el aposento de Don Quijote. Ideal para grupos reducidos de AP Spanish o cursos avanzados.',
+    recommendedSpace: 'Salón de clases, biblioteca o espacio pequeño',
+    description: 'Una experiencia cercana donde el aula se convierte en el cuarto de Don Quijote. Ideal para grupos pequeños y clases avanzadas de español.',
     features: [
-      'Sin necesidad de tramoya ni tarima elevada',
-      'Interacción directa y contacto visual constante con los estudiantes',
-      'Materiales escenográficos transportables y de bajo impacto acústico',
-      'Perfecto para debates filológicos y dinámicas cercanas'
+      'No necesita escenario ni equipo especial',
+      'Interacción directa y constante con el actor',
+      'Montaje rápido y sin complicaciones',
+      'Ideal para preguntas, debate y conversación fluida'
     ],
     icon: 'BookOpen',
     badge: 'Máxima Interacción',
-    recommendedFor: 'Cursos de AP Spanish Literature, Clubes de Español, Grupos de Honor'
+    recommendedFor: 'Elemental, Intermedia, Superior (AP Spanish) y grupos reducidos'
   },
   {
     id: 'medio',
     title: 'Función Media',
-    subtitle: 'Montaje Adaptable para Espacios Múltiples',
+    subtitle: 'Para grupos medianos y espacios flexibles',
     capacity: 'De 21 a 75 personas',
-    recommendedSpace: 'Anfiteatro escolar, salón de conferencias, biblioteca o sala multiusos',
-    description: 'Equilibrio perfecto entre proyección escénica y cercanía pedagógica. Incorpora elementos de iluminación portátil y apoyo sonoro para una audiencia mediana.',
+    recommendedSpace: 'Anfiteatro, salón de conferencias o biblioteca',
+    description: 'El balance ideal entre obra de teatro y cercanía educativa. Incluye sonido claro e iluminación ligera para que todos disfruten cómodamente.',
     features: [
-      'Montaje escénico versátil en 30 minutos',
-      'Audio amplificado para óptima inteligibilidad en salones amplios',
-      'Diseño visual pensado para ángulos múltiples de visión',
-      'Participación activa del público desde sus asientos'
+      'Montaje listo en 30 minutos',
+      'Sonido amplificado para que todos escuchen perfecto',
+      'Buena visibilidad desde cualquier asiento',
+      'Participación activa de los estudiantes'
     ],
     icon: 'Users',
-    badge: 'Más Solicitado por Escuelas',
-    recommendedFor: 'Grados completos (9º a 12º), Departamentos de Idiomas, Eventos de Herencia Hispana'
+    badge: 'Opción más popular',
+    recommendedFor: 'Grados completos (Elemental a Superior), departamentos de idiomas y universidades'
   },
   {
     id: 'completo',
     title: 'Experiencia Teatral Completa',
-    subtitle: 'Gran Despliegue Escénico y Lumínico',
-    capacity: 'Más de 75 personas (Auditorio o Teatro)',
-    recommendedSpace: 'Teatro tradicional escolar, auditorio principal o centro de bellas artes',
-    description: 'La puesta en escena en su máxima expresión artística. Diseñada para funciones multitudinarias escolares o comunitarias con diseño completo de iluminación, efectos y ambientación épica.',
+    subtitle: 'Gran función para todo el público',
+    capacity: 'Más de 75 personas',
+    recommendedSpace: 'Auditorio escolar o teatro tradicional',
+    description: 'La versión teatral completa con luces, música y ambientación. Diseñada para funciones grandes con muchos estudiantes y maestros.',
     features: [
-      'Diseño de luces teatrales y atmósfera inmersiva de época',
-      'Diseño sonoro envolvente que acompaña el viaje en el tiempo',
-      'Capacidad para congregar múltiples escuelas o todo el cuerpo estudiantil',
-      'Experiencia memorable de alto impacto visual y emocional'
+      'Luces y efectos de sonido teatrales',
+      'Ambiente completo de viaje en el tiempo',
+      'Para toda la escuela o varias escuelas invitadas',
+      'Una experiencia emocionante y memorable'
     ],
     icon: 'Sparkles',
-    badge: 'Impacto Multitudinario',
-    recommendedFor: 'Toda la matrícula escolar, Asambleas Generales, Festivales de Teatro Educativo'
+    badge: 'Gran Escenario',
+    recommendedFor: 'Toda la comunidad escolar: Elemental, Intermedia, Superior y Universitaria'
   }
 ];
 
@@ -65,45 +65,45 @@ export const POST_SHOW_WORKSHOPS: PostShowWorkshop[] = [
     title: 'Conversatorio Tipo Tertulia',
     duration: '30 minutos',
     instructor: 'Wilderman García (Actor) y Gabriel Villegas',
-    description: 'Diálogo directo y espontáneo en español entre los estudiantes y el actor fuera de personaje. Espacio abierto para preguntas sobre el proceso actoral, el Siglo de Oro y la vigencia quijotesca.',
+    description: 'Una charla relajada y en confianza entre los alumnos y el actor. Un espacio abierto para hacer preguntas sobre la obra, la actuación y los temas de Don Quijote hoy.',
     keyOutcomes: [
-      'Diálogo 100% en español sobre temas libres de la obra',
-      'Desmitificación de la literatura clásica como algo lejano o aburrido',
-      'Reflexión sobre los "molinos de viento" modernos que enfrentan los jóvenes',
-      'Sesión de preguntas y respuestas con retroalimentación inmediata'
+      'Conversación 100% en español sobre tema libre',
+      'Conectar un clásico de la literatura con la vida diaria',
+      'Hablar sobre los retos y "molinos de viento" de los jóvenes hoy',
+      'Preguntas y respuestas directas con el actor'
     ],
     icon: 'MessageSquare',
     badge: 'Dinámica Ágil'
   },
   {
     id: 'masterclass',
-    title: 'Clase Magistral de Actuación & Siglo de Oro',
-    duration: '1 hora académica',
-    instructor: 'Wilderman García (Actor Protagónico)',
-    description: 'Capacitación temática intensiva centrada en la expresión corporal, la declamación de versos clásicos y cómo el actor construye la psicología de Don Quijote en el contexto del siglo XXI.',
+    title: 'Clase Magistral de Actuación',
+    duration: '1 hora',
+    instructor: 'Wilderman García (Actor)',
+    description: 'Una clase práctica donde los estudiantes aprenden ejercicios de voz, expresión corporal y actuación guiados por el actor principal.',
     keyOutcomes: [
-      'Ejercicios prácticos de dicción y proyección vocal en español',
-      'Técnicas de encarnación corporal de caballeros y escuderos',
-      'Análisis interpretativo de monólogos cervantinos en vivo',
-      'Guía para que los alumnos interpreten pasajes teatrales'
+      'Ejercicios prácticos de voz y pronunciación en español',
+      'Técnicas sencillas de expresión y actuación en escena',
+      'Cómo dar vida a un personaje clásico de forma moderna',
+      'Práctica de lectura y actuación de fragmentos breves'
     ],
     icon: 'Award',
-    badge: 'Formación Artística'
+    badge: 'Taller Práctico'
   },
   {
     id: 'inmersivo',
     title: 'Programa de Capacitación Inmersivo',
-    duration: '2 horas completas',
-    instructor: 'Gabriel Villegas (Dramaturgo) & Wilderman García',
-    description: 'Taller integral de diseño instruccional y dramaturgia participativa. Los estudiantes no solo aprenden sobre la obra, sino que crean y adaptan sus propias escenas quijotescas en vivo.',
+    duration: '2 horas',
+    instructor: 'Gabriel Villegas (Autor) y Wilderman García',
+    description: 'Taller completo y participativo donde los estudiantes escriben, adaptan y actúan sus propias escenas cortas inspiradas en Don Quijote.',
     keyOutcomes: [
-      'Taller guiado de escritura creativa inspirada en el Siglo de Oro',
-      'Puesta en práctica de metodologías de teatro pedagógico',
-      'Certificados de participación para los estudiantes del programa',
-      'Materiales didácticos y rúbricas de evaluación para el docente'
+      'Taller guiado de escritura creativa en español',
+      'Creación y presentación de escenas por los alumnos',
+      'Certificado de participación para cada estudiante',
+      'Guía didáctica y actividades para el maestro'
     ],
     icon: 'GraduationCap',
-    badge: 'Máximo Valor Pedagógico'
+    badge: 'Taller Completo'
   }
 ];
 
@@ -112,30 +112,30 @@ export const ACADEMIC_PILLARS: AcademicPillar[] = [
     id: 'teatro-educativo',
     number: 'I',
     title: 'Teatro Educativo',
-    verbs: ['Demostrar', 'Adquirir', 'Interactuar'],
-    focus: 'Inmersión Lingüística Directa',
-    description: 'Demostrar la adquisición y fluidez del idioma español a través de la interacción dramática en tiempo real, rompiendo la barrera de la timidez verbal mediante el juego escénico.',
-    curriculumBenefit: 'Fortalece la competencia comunicativa oral y la comprensión auditiva en contextos vivos y emotivos.',
+    verbs: ['Demostrar', 'Aprender', 'Participar'],
+    focus: 'Práctica viva del español',
+    description: 'Demostrar la adquisición del idioma a través de la interacción directa en escena, perdiendo el miedo a hablar en público con el juego teatral.',
+    curriculumBenefit: 'Ayuda a los estudiantes a hablar con más confianza y entender mejor el español hablado.',
     iconName: 'Theater'
   },
   {
     id: 'lectoescritura',
     number: 'II',
     title: 'Lectoescritura',
-    verbs: ['Analizar', 'Interpretar', 'Deconstruir'],
-    focus: 'Estructura del Texto Dramático',
-    description: 'Analizar la arquitectura del texto dramático, deconstruir la prosa cervantina e interpretar pasajes fundamentales que conectan la lectura crítica con la representación teatral.',
-    curriculumBenefit: 'Alineado a los estándares de análisis textual del currículo AP Spanish Literature and Language.',
+    verbs: ['Analizar', 'Interpretar', 'Comprender'],
+    focus: 'Estructura del texto y lectura',
+    description: 'Analizar la estructura del texto dramático e interpretar pasajes clave que unen la lectura con la actuación en vivo.',
+    curriculumBenefit: 'Apoya el análisis de textos para clases de literatura y exámenes avanzados de español.',
     iconName: 'PenTool'
   },
   {
     id: 'apreciacion-literaria',
     number: 'III',
     title: 'Apreciación Literaria',
-    verbs: ['Identificar', 'Comparar', 'Sintetizar'],
-    focus: 'Valores Universales y Contexto Actual',
-    description: 'Identificar los temas centrales del clásico de Miguel de Cervantes —el idealismo, la justicia, la locura lúcida— y comparar sus valores universales con los desafíos del siglo XXI en EE. UU.',
-    curriculumBenefit: 'Fomenta el pensamiento crítico y la capacidad de establecer paralelismos éticos y sociales.',
+    verbs: ['Identificar', 'Comparar', 'Reflexionar'],
+    focus: 'Valores clásicos en el mundo actual',
+    description: 'Identificar los temas centrales del clásico cervantino y comparar sus valores universales —como la justicia y los sueños— con el contexto actual.',
+    curriculumBenefit: 'Desarrolla el pensamiento crítico y la capacidad de comparar épocas e ideas.',
     iconName: 'Scroll'
   },
   {
@@ -144,8 +144,8 @@ export const ACADEMIC_PILLARS: AcademicPillar[] = [
     title: 'Apreciación Cultural y Lingüística',
     verbs: ['Reconocer', 'Evaluar', 'Celebrar'],
     focus: 'Impacto de la Herencia Hispana',
-    description: 'Reconocer las diversas manifestaciones y variantes léxicas del español y evaluar el impacto cultural, literario e identitario de la Herencia Hispana en la sociedad estadounidense.',
-    curriculumBenefit: 'Celebra la identidad bilingüe e intercultural de los estudiantes dentro y fuera del salón de clases.',
+    description: 'Reconocer las distintas formas de hablar español y evaluar el impacto positivo de la Herencia Hispana en los Estados Unidos.',
+    curriculumBenefit: 'Celebra la riqueza cultural y el orgullo de hablar español en la escuela y la comunidad.',
     iconName: 'Globe2'
   }
 ];
@@ -153,20 +153,20 @@ export const ACADEMIC_PILLARS: AcademicPillar[] = [
 export const TECHNICAL_DATA = {
   title: 'Don Quijote en USA',
   subtitle: 'Unipersonal de Teatro Educativo y Experiencia Académica en Español',
-  genre: 'Unipersonal Teatral / Comedia Dramática Pedagógica',
+  genre: 'Monólogo Teatral / Comedia Educativa',
   author: 'Gabriel Villegas',
   actor: 'Wilderman García',
   producer: 'Teatro for the Soul',
-  duration: '60 minutos (obra) + Taller post-función a elección',
-  language: '100% Español (con dinámicas de apoyo y comprensión contextual)',
-  classification: 'Apto para High School (9-12), Middle School (6-8) y Nivel Universitario',
-  stageRequirements: 'Completamente adaptable (desde salón de clases hasta auditorio mayor)',
+  duration: '60 minutos de obra (+ taller a elegir)',
+  language: '100% Español (fácil de entender con apoyo visual y contexto)',
+  classification: 'Apto para todos los niveles: Elemental (K-5), Intermedia (6-8), Superior (9-12) y Universidad',
+  stageRequirements: 'Totalmente adaptable a cualquier espacio de la escuela',
   domain: 'donquijoteusa.com'
 };
 
 export const SYNOPSIS_TEXT = {
   quote: '« Sabe, Sancho amigo, que yo nací por querer del cielo en esta nuestra edad de hierro para resucitar en ella la dorada... »',
-  excerptP1: 'Entre las cenizas humeantes de lo que otrora fue su amada biblioteca, un desolado Don Quijote sostiene con manos temblorosas el único manuscrito que sobrevivió al voraz escrutinio: la segunda parte de «La Galatea». En medio del dolor por la pérdida de sus libros de caballería, una fuerza misteriosa y un pliegue en el tejido del tiempo lo arrancan de su natal Mancha.',
-  excerptP2: 'Despierta súbitamente en el siglo XXI, desorientado pero jamás vencido, en medio de la vorágine urbana de los Estados Unidos. Los gigantes ya no tienen aspas de madera: son autopistas de múltiples niveles, rascacielos relucientes y pantallas brillantes que cautivan a las almas modernas.',
-  excerptP3: 'Convencido de que su sin par Dulcinea del Toboso ha sido víctima de un nuevo y sofisticado encantamiento que la mantiene oculta en territorio norteamericano, Don Quijote emprende una cruzada inolvidable junto a la memoria de su fiel Sancho Panza y su leal Rocinante, demostrando a estudiantes y maestros que la nobleza, la justicia y la locura de soñar siguen más vivas que nunca.'
+  excerptP1: 'Entre las cenizas de su biblioteca quemada, un triste Don Quijote encuentra el único libro que se salvó del fuego: la segunda parte de «La Galatea». Con el libro en sus manos, una fuerza misteriosa abre un portal en el tiempo y lo transporta desde La Mancha hasta el presente.',
+  excerptP2: 'Don Quijote despierta en pleno siglo XXI en los Estados Unidos. Sorprendido pero valiente, descubre un nuevo mundo lleno de rascacielos gigantes, autopistas veloces y pantallas digitales que no dejan de brillar.',
+  excerptP3: 'Convencido de que su amada Dulcinea del Toboso está encantada y oculta en suelo estadounidense, Don Quijote inicia una nueva aventura. Junto al recuerdo de su fiel Sancho Panza y su caballo Rocinante, invita a los estudiantes a ayudarle a romper el hechizo, recordando a todos que la nobleza, la justicia y la magia de soñar siguen vivas.'
 };

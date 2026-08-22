@@ -28,6 +28,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
     { label: 'Guía de Selección', href: '#guia-formatos' },
     { label: 'Sinopsis', href: '#sinopsis' },
     { label: 'Ficha Técnica', href: '#ficha-tecnica' },
+    { label: 'Certificados', href: '#certificados' },
     { label: 'Contacto', href: '#contacto' },
   ];
 

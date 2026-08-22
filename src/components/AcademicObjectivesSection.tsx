@@ -54,7 +54,7 @@ export default function AcademicObjectivesSection() {
           </h2>
 
           <p className="text-base sm:text-lg text-[#4A2E18] font-serif italic mt-2 max-w-2xl mx-auto">
-            Objetivos de aprendizaje diseñados para satisfacer las competencias curriculares de español avanzado, literatura universal y apreciación cultural.
+            Objetivos de aprendizaje adaptados a cada nivel escolar (Elemental, Intermedia, Superior y Universitario) para enriquecer el dominio del español y la apreciación literaria.
           </p>
 
           <div className="flex items-center justify-center gap-3 mt-4">

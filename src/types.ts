@@ -40,7 +40,7 @@ export interface AcademicPillar {
 
 export interface BookingFormState {
   schoolName: string;
-  schoolType: 'publica' | 'privada' | 'charter' | 'universidad' | 'otra';
+  schoolType: 'publica' | 'elemental' | 'intermedia' | 'superior' | 'privada' | 'charter' | 'universidad' | 'otra';
   cityState: string;
   contactName: string;
   contactRole: string;

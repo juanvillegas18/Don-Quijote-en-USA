@@ -44,14 +44,14 @@ export default function InteractiveEducatorGuide({ onGenerateProposal }: Interac
     schoolType: 'publica',
     cityState: '',
     contactName: '',
-    contactRole: 'Maestro(a) de Español / AP Spanish',
+    contactRole: 'Maestro(a) de Español / Coordinador',
     contactEmail: '',
     contactPhone: '',
     selectedFormatId: 'medio',
     selectedWorkshopId: 'tertulia',
     preferredDate: '',
     estimatedAudience: 60,
-    gradeLevels: ['9º Grado', '10º Grado', '11º Grado', '12º Grado'],
+    gradeLevels: ['Elemental (K-5)', 'Intermedia (6º-8º)', 'Superior (9º-12º)', 'Universidad'],
     specialRequirements: ''
   });
 
@@ -472,6 +472,9 @@ export default function InteractiveEducatorGuide({ onGenerateProposal }: Interac
                       onChange={(e) => setFormData({ ...formData, schoolType: e.target.value as any })}
                     >
                       <option value="publica">Escuela Pública / Distrito Escolar</option>
+                      <option value="elemental">Escuela Elemental / Primaria (K-5)</option>
+                      <option value="intermedia">Escuela Intermedia / Middle School (6-8)</option>
+                      <option value="superior">Escuela Superior / High School (9-12)</option>
                       <option value="privada">Colegio Privado / Independiente</option>
                       <option value="charter">Escuela Charter / Magnet</option>
                       <option value="universidad">Universidad / College</option>
@@ -573,10 +576,17 @@ export default function InteractiveEducatorGuide({ onGenerateProposal }: Interac
                 {/* Grade levels checkboxes */}
                 <div className="pt-1">
                   <label className="block font-serif font-bold text-[#3B2314] mb-1.5">
-                    Nivel de los Estudiantes Participantes:
+                    Nivel de los Estudiantes Participantes (Todos los niveles disponibles):
                   </label>
                   <div className="flex flex-wrap gap-2">
-                    {['6º-8º (Middle)', '9º Grado', '10º Grado', '11º Grado', '12º Grado', 'AP Spanish', 'Universidad'].map((grade) => (
+                    {[
+                      'Elemental (K-5)',
+                      'Intermedia (6º-8º)',
+                      'Superior (9º-12º)',
+                      'AP Spanish / Literatura',
+                      'Universidad / College',
+                      'Toda la Escuela (Multinivel)'
+                    ].map((grade) => (
                       <button
                         key={grade}
                         type="button"

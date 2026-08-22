@@ -244,7 +244,9 @@ export default function FooterSection() {
           <p>
             © {new Date().getFullYear()} <strong>donquijoteusa.com</strong> • Todos los derechos reservados. Producción exclusiva de <strong>Teatro for the Soul</strong>.
           </p>
-          <div className="flex items-center gap-4 text-[11px]">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-[11px]">
+            <a href="#certificados" className="text-[#F0D38D] hover:underline font-bold">Validar Certificados</a>
+            <span>•</span>
             <span>Dramaturgia: Gabriel Villegas</span>
             <span>•</span>
             <span>Actor: Wilderman García</span>

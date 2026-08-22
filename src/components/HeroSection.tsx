@@ -27,7 +27,7 @@ export default function HeroSection({ onExploreSelection }: HeroSectionProps) {
         <div className="flex justify-center mb-6">
           <div className="inline-flex items-center gap-2 bg-[#701A27] text-[#F0D38D] px-4 py-1.5 rounded-sm border-2 border-[#C89D35] shadow-md">
             <span className="text-[10px] sm:text-xs font-serif font-black uppercase tracking-[0.2em]">
-              ⚜️ Obra de Teatro Académico para Escuelas & Universidades en EE. UU.
+              ⚜️ Obra de Teatro Académico para Todos los Niveles: Elemental, Intermedia, Superior & Universidad
             </span>
           </div>
         </div>
@@ -115,7 +115,7 @@ export default function HeroSection({ onExploreSelection }: HeroSectionProps) {
               </div>
               <div>
                 <span className="text-[10px] font-mono uppercase text-[#701A27] font-bold block">Nivel Escolar</span>
-                <span className="text-xs font-serif font-bold text-[#2B170A]">High School / Univ.</span>
+                <span className="text-xs font-serif font-bold text-[#2B170A]">Todos los Niveles</span>
               </div>
             </div>
           </div>
@@ -139,6 +139,15 @@ export default function HeroSection({ onExploreSelection }: HeroSectionProps) {
             >
               <BookOpen className="w-4 h-4 text-[#701A27]" />
               <span>Leer Sinopsis</span>
+            </a>
+
+            <a
+              href="#certificados"
+              className="w-full sm:w-auto bg-[#FAF6EE] hover:bg-[#F4EEDF] text-[#701A27] font-serif font-bold text-sm sm:text-base uppercase tracking-widest px-6 py-4 rounded-sm border-2 border-[#C89D35] shadow-sm flex items-center justify-center gap-2 transition-all"
+              id="hero-cert-btn"
+            >
+              <ShieldCheck className="w-4 h-4 text-[#2E6F40]" />
+              <span>Validar Certificados</span>
             </a>
           </div>
 

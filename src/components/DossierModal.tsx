@@ -155,7 +155,7 @@ export default function DossierModal({ isOpen, onClose, data }: DossierModalProp
                 </div>
               </div>
 
-              <div className="grid grid-cols-12 p-3 bg-[#FAF8F1] items-center">
+              <div className="grid grid-cols-12 p-3 bg-[#FAF8F1] items-center border-b border-slate-200">
                 <div className="col-span-8">
                   <strong className="font-serif font-bold text-[#2B170A] block text-sm">
                     2. Taller Pedagógico: {selectedWorkshop.title}
@@ -172,6 +172,18 @@ export default function DossierModal({ isOpen, onClose, data }: DossierModalProp
                   <span className="block text-[10px] text-[#6B5E55]">Interactivo</span>
                 </div>
               </div>
+
+              <div className="grid grid-cols-12 p-2.5 bg-[#F4EEDF] items-center text-[11px]">
+                <div className="col-span-8 font-serif">
+                  <strong className="text-[#701A27]">Niveles Escolares Seleccionados:</strong>{' '}
+                  <span className="text-[#2B170A]">
+                    {data.gradeLevels && data.gradeLevels.length > 0 ? data.gradeLevels.join(', ') : 'Todos los niveles (Elemental a Universidad)'}
+                  </span>
+                </div>
+                <div className="col-span-4 text-right font-mono font-semibold text-[#701A27]">
+                  Audiencia est.: {data.estimatedAudience} participantes
+                </div>
+              </div>
             </div>
           </div>
 
@@ -181,7 +193,7 @@ export default function DossierModal({ isOpen, onClose, data }: DossierModalProp
               II. Justificación Curricular para la Administración Escolar
             </h3>
             <p className="leading-relaxed">
-              La presentación de <em>«Don Quijote en USA»</em> complementa directamente los objetivos del currículo de Lenguas Extranjeras, Literatura Española y Programas de Doble Inmersión (Dual Language), promoviendo la comprensión auditiva, la interacción verbal espontánea y el análisis de textos clásicos según los estándares de <strong>AP Spanish Literature and Culture</strong> y <strong>ACTFL World-Readiness Standards</strong>.
+              La presentación de <em>«Don Quijote en USA»</em> está diseñada pedagógicamente para adaptarse con eficacia a todos los niveles académicos: <strong>Elemental (K-5)</strong>, <strong>Intermedia (6-8)</strong>, <strong>Superior (9-12 / AP Spanish)</strong> y <strong>Nivel Universitario</strong>. Complementa directamente los objetivos curriculares de Lenguas del Mundo, Literatura Española y Programas de Doble Inmersión (Dual Language), fortaleciendo la comprensión auditiva, la expresión oral y la apreciación cultural bajo los estándares de <strong>ACTFL World-Readiness Standards</strong>.
             </p>
           </div>
 

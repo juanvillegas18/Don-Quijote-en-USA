@@ -10,17 +10,29 @@ import TechnicalSpecsSection from './components/TechnicalSpecsSection';
 import AcademicObjectivesSection from './components/AcademicObjectivesSection';
 import InteractiveEducatorGuide from './components/InteractiveEducatorGuide';
 import SynopsisSection from './components/SynopsisSection';
+import CertificateValidatorSection from './components/CertificateValidatorSection';
 import FooterSection from './components/FooterSection';
 import DossierModal from './components/DossierModal';
+import CertificateDiplomaModal from './components/CertificateDiplomaModal';
 import { BookingFormState } from './types';
+import { AcademicCertificate } from './data/certificatesData';
 
 export default function App() {
   const [modalOpen, setModalOpen] = useState(false);
   const [submittedData, setSubmittedData] = useState<BookingFormState | null>(null);
+  
+  // Certificate diploma viewer modal
+  const [certModalOpen, setCertModalOpen] = useState(false);
+  const [activeCertificate, setActiveCertificate] = useState<AcademicCertificate | null>(null);
 
   const handleGenerateProposal = (data: BookingFormState) => {
     setSubmittedData(data);
     setModalOpen(true);
+  };
+
+  const handleOpenCertificateModal = (cert: AcademicCertificate) => {
+    setActiveCertificate(cert);
+    setCertModalOpen(true);
   };
 
   const handleScrollToBooking = () => {
@@ -54,9 +66,12 @@ export default function App() {
         {/* 5. Sección de Sinopsis (Cuerpo Central - La Galatea 2da parte, Cenizas, Viaje temporal al siglo XXI en USA) */}
         <SynopsisSection />
 
+        {/* 6. Sección de Validación de Certificados Académicos & Acreditación Institucional */}
+        <CertificateValidatorSection onViewCertificate={handleOpenCertificateModal} />
+
       </main>
 
-      {/* 6. Footer / Pie de Página */}
+      {/* 7. Footer / Pie de Página */}
       <FooterSection />
 
       {/* Printable / Downloadable Academic Proposal Modal */}
@@ -64,6 +79,13 @@ export default function App() {
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
         data={submittedData}
+      />
+
+      {/* Official Certificate / Diploma Printable Modal */}
+      <CertificateDiplomaModal
+        isOpen={certModalOpen}
+        onClose={() => setCertModalOpen(false)}
+        certificate={activeCertificate}
       />
 
     </div>

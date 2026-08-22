@@ -132,8 +132,8 @@ export default function TechnicalSpecsSection() {
                 </div>
 
                 <div className="flex justify-between items-center py-1.5 border-b border-white/10">
-                  <span className="text-[#F0D38D] font-serif font-bold">Público Recomendado:</span>
-                  <span className="font-sans font-medium">Middle, High School & Univ.</span>
+                  <span className="text-[#F0D38D] font-serif font-bold">Nivel Escolar:</span>
+                  <span className="font-sans font-medium text-[#FAF6EE]">Todos los Niveles (Elemental a Universidad)</span>
                 </div>
 
                 <div className="flex justify-between items-center pt-2">
