@@ -1,0 +1,6 @@
+{
+  "name": "Don Quijote en USA",
+  "description": "Portal informativo y de reserva académica para la obra de teatro educativo Don Quijote en USA en donquijoteusa.com.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

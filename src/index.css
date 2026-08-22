@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Cinzel", Georgia, serif;
+  --font-ornate: "Cinzel Decorative", serif;
+
+  --color-parchment-light: #FAF6EE;
+  --color-parchment-base: #F4EEDF;
+  --color-parchment-dark: #E8DDCA;
+  
+  --color-gold-light: #F0D38D;
+  --color-gold-base: #C89D35;
+  --color-gold-dark: #8F6A18;
+  
+  --color-burgundy-light: #9B2838;
+  --color-burgundy-base: #701A27;
+  --color-burgundy-dark: #4A0E18;
+
+  --color-leather-base: #3B2314;
+  --color-leather-dark: #24140B;
+  
+  --color-ink-midnight: #161A22;
+  --color-ink-sepia: #2D241E;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Medieval parchment textures and decorative borders */
+.parchment-bg {
+  background-color: #F6F1E5;
+  background-image: radial-gradient(#E8DFC9 1px, transparent 1px), radial-gradient(#E8DFC9 1px, #F6F1E5 1px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+
+.manuscript-card {
+  background: linear-gradient(135deg, #FBF8F1 0%, #F5EFE1 100%);
+  border: 1px solid #D8C8AF;
+  box-shadow: 0 4px 20px -2px rgba(59, 35, 20, 0.07), 0 1px 3px 0 rgba(59, 35, 20, 0.04);
+}
+
+.gold-emboss {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 0 10px rgba(200, 157, 53, 0.3);
+}
+
+.ornate-border-double {
+  border: 4px double #C89D35;
+}
+
+.ornate-border-engraved {
+  position: relative;
+}
+.ornate-border-engraved::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(200, 157, 53, 0.4);
+  pointer-events: none;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #E2C068 0%, #C89D35 50%, #8F6A18 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Ornate corner bracket styling */
+.corner-bracket-tl {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 14px;
+  height: 14px;
+  border-top: 2px solid #C89D35;
+  border-left: 2px solid #C89D35;
+}
+
+.corner-bracket-tr {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 14px;
+  height: 14px;
+  border-top: 2px solid #C89D35;
+  border-right: 2px solid #C89D35;
+}
+
+.corner-bracket-bl {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  width: 14px;
+  height: 14px;
+  border-bottom: 2px solid #C89D35;
+  border-left: 2px solid #C89D35;
+}
+
+.corner-bracket-br {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 14px;
+  height: 14px;
+  border-bottom: 2px solid #C89D35;
+  border-right: 2px solid #C89D35;
+}
+
