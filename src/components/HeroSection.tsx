@@ -249,19 +249,19 @@ export default function HeroSection({ onNavigateTab }: HeroSectionProps) {
                   <div className="flex items-center justify-between text-xs font-mono text-amber-300 mb-0.5">
                     <span>Wilderman García</span>
                     <span className="text-[10px] bg-amber-400/20 px-2 py-0.5 rounded border border-amber-300/40 font-bold">
-                      {isSpanish ? 'Artes Escénicas y Siglo de Oro' : 'Performing Arts & Golden Age'}
+                      {isSpanish ? 'Don Quijote en Escena' : 'Don Quixote on Stage'}
                     </span>
                   </div>
                   <h3 className="font-cinzel text-base sm:text-lg font-bold text-white flex items-center justify-between">
-                    <span>{isSpanish ? 'Iconografía y Caracterización Cervantina' : 'Cervantine Iconography & Theatrical Characterization'}</span>
+                    <span>{isSpanish ? 'La Obra Teatral en Vivo' : 'The Live Theatrical Performance'}</span>
                     <span className="text-xs font-sans font-normal text-amber-300 underline group-hover:text-white flex items-center gap-1">
                       PostImg HD &rarr;
                     </span>
                   </h3>
                   <p className="font-sans text-xs text-stone-300 mt-0.5">
                     {isSpanish
-                      ? 'Monólogo teatral unipersonal, prosodia literaria y coloquio pedagógico en español · Teatro for the Soul Inc'
-                      : 'Live classical solo performance, target-language prosody & educational symposium · Teatro for the Soul Inc'}
+                      ? 'Monólogo dinámico en español y tertulia interactiva con los estudiantes · Teatro for the Soul Inc'
+                      : 'Dynamic solo performance in Spanish with live student talkback · Teatro for the Soul Inc'}
                   </p>
                 </div>
               </a>

@@ -11,11 +11,7 @@ import {
   X, 
   ChevronLeft, 
   ChevronRight, 
-  ExternalLink,
-  BookOpen,
-  Compass,
-  MessageSquare,
-  Users
+  ExternalLink
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -38,22 +34,22 @@ export const STAGE_PHOTOS: GalleryPhoto[] = [
     src: 'https://i.postimg.cc/QDvh8ygJ/IMG-0943.jpg',
     fallbackSrc: 'https://i.postimg.cc/zDw9ppcy/IMG-0943.jpg',
     externalLink: 'https://postimg.cc/QDvh8ygJ',
-    titleEs: 'La Caracterización de Don Quijote',
-    titleEn: 'Characterization of Don Quixote',
-    descEs: 'Wilderman García encarna al personaje con profundidad actoral, uniendo la expresividad gestual con la nobleza de los ideales clásicos.',
-    descEn: 'Wilderman García portrays the iconic protagonist with depth and skill, uniting physical comedy with the nobility of classic ideals.',
+    titleEs: 'Don Quijote en Vivo',
+    titleEn: 'Don Quixote in Character',
+    descEs: 'Wilderman García se mete en la piel de Don Quijote con humor, gestos expresivos y la nobleza de un soñador que nunca se rinde.',
+    descEn: 'Wilderman García steps into Don Quixote’s shoes with humor, expressive gestures, and the heart of a dreamer who never gives up.',
     tagEs: 'El Personaje',
-    tagEn: 'The Solo Portrayal'
+    tagEn: 'The Character'
   },
   {
     id: 'img-0945',
     src: 'https://i.postimg.cc/0vhPkBGn/IMG-0945.jpg',
     fallbackSrc: 'https://i.postimg.cc/h48HMM5Q/IMG-0945.jpg',
     externalLink: 'https://postimg.cc/0vhPkBGn',
-    titleEs: 'Puesta en Escena en el Auditorio',
-    titleEn: 'Theatrical Staging in the Auditorium',
-    descEs: 'Representación en vivo de 45 minutos diseñada para conectar con los estudiantes mediante el humor, el dinamismo y la emoción literaria.',
-    descEn: 'A brisk 45-minute live performance designed to engage students through dynamic staging, humor, and literary emotion.',
+    titleEs: 'La Obra en el Escenario',
+    titleEn: 'Live on Stage',
+    descEs: '45 minutos llenos de energía, risas y acción donde el escenario escolar cobra vida frente a los ojos de los alumnos.',
+    descEn: '45 energetic minutes of laughter and live drama where the school stage comes alive right before students’ eyes.',
     tagEs: 'En Escena',
     tagEn: 'On Stage'
   },
@@ -62,11 +58,23 @@ export const STAGE_PHOTOS: GalleryPhoto[] = [
     src: 'https://i.postimg.cc/TRRvS86G/IMG-1826.jpg',
     fallbackSrc: 'https://i.postimg.cc/TRRvS86G/IMG-1826.jpg',
     externalLink: 'https://postimg.cc/TRRvS86G',
-    titleEs: 'Tertulia y Diálogo con Estudiantes',
-    titleEn: 'Student Dialogue & Post-Show Talkback',
-    descEs: '15 minutos de conversatorio interactivo en español donde los alumnos hacen preguntas al actor y debaten los temas de la obra.',
-    descEn: '15 minutes of interactive Spanish Q&A where students converse directly with the actor and reflect on the story’s themes.',
-    tagEs: 'Con los Estudiantes',
+    titleEs: 'En la Trasescena',
+    titleEn: 'Behind the Scenes',
+    descEs: 'Preparación de indumentaria y concentración del actor en camerino antes de salir al escenario escolar.',
+    descEn: 'Costume preparation, Golden Age attire, and artistic focus in the dressing room before stepping out on stage.',
+    tagEs: 'La Trasescena',
+    tagEn: 'Backstage'
+  },
+  {
+    id: 'img-0950',
+    src: 'https://i.postimg.cc/NtZBsz81/IMG-0950.jpg',
+    fallbackSrc: 'https://i.postimg.cc/WVxTNHm6/IMG-0951.jpg',
+    externalLink: 'https://postimg.cc/NtZBsz81',
+    titleEs: 'Con los Estudiantes',
+    titleEn: 'With the Students',
+    descEs: 'Charla amena y participativa en español al terminar la función: preguntas, reflexiones y fotos de recuerdo.',
+    descEn: 'Lively Spanish Q&A session with students after the show: interactive reflections, questions, and group photos.',
+    tagEs: 'Con los Alumnos',
     tagEn: 'With Students'
   }
 ];
@@ -109,31 +117,6 @@ export default function StageGallerySection() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [selectedPhotoIndex, nextPhoto, prevPhoto]);
 
-  // Subtle Educational Theater Principles
-  const theaterPrinciples = [
-    {
-      icon: BookOpen,
-      titleEs: 'Inmersión Lingüística Natural',
-      titleEn: 'Natural Language Immersion',
-      descEs: 'El contexto visual, corporal y escénico permite que los estudiantes comprendan el español sin traducción, fortaleciendo la escucha activa.',
-      descEn: 'Visual, physical, and dramatic context allows students to understand Spanish organically without translation, strengthening active listening.'
-    },
-    {
-      icon: Compass,
-      titleEs: 'Pensamiento Crítico y Valores',
-      titleEn: 'Critical Thinking & Values',
-      descEs: 'A través de las aventuras de Don Quijote, los jóvenes reflexionan sobre la empatía, el honor, la justicia social y el valor de perseverar.',
-      descEn: 'Through Don Quixote’s journey, youth reflect on empathy, honor, social justice, and the courage to persevere against all odds.'
-    },
-    {
-      icon: MessageSquare,
-      titleEs: 'Participación y Diálogo Horizontal',
-      titleEn: 'Active Student Engagement',
-      descEs: 'Romper la cuarta pared y dialogar en la tertulia posterior transforma al estudiante en interlocutor activo de su propio aprendizaje.',
-      descEn: 'Breaking the fourth wall and engaging in the post-show talkback turns students from passive listeners into active participants.'
-    }
-  ];
-
   return (
     <section id="galeria-teatral" className="relative py-16 sm:py-24 bg-[#FAF7F0] border-b-2 border-amber-300/70 overflow-hidden">
       {/* Ambient theatrical spotlight glow in the background */}
@@ -145,7 +128,7 @@ export default function StageGallerySection() {
         <div className="max-w-2xl mx-auto text-center mb-12">
           <div className="inline-flex items-center gap-2 text-xs font-sans font-bold tracking-wider uppercase bg-gradient-to-r from-amber-100 via-amber-200/70 to-amber-100 text-amber-950 mb-3 px-4 py-1.5 rounded-full border border-amber-300/90 shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-[#9E1B32] animate-pulse" />
-            <span>{isSpanish ? 'Magia Escénica · Teatro Educativo en Vivo' : 'Stage Magic · Live Educational Theatre'}</span>
+            <span>{isSpanish ? 'Magia Escénica en Vivo' : 'Live Stage Magic'}</span>
           </div>
           
           <h2 className="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-900 leading-tight">
@@ -169,8 +152,8 @@ export default function StageGallerySection() {
           </p>
         </div>
 
-        {/* 3 FEATURED PHOTOGRAPHS WITH THEATRICAL MAGIC FRAME */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 mb-14">
+        {/* 4 FEATURED PHOTOGRAPHS WITH THEATRICAL MAGIC FRAME */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
           {STAGE_PHOTOS.map((photo, index) => (
             <div
               key={photo.id}
@@ -254,45 +237,6 @@ export default function StageGallerySection() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* SUBTLE EDUCATIONAL THEATER PRINCIPLES APPLIED TO DON QUIJOTE EN USA */}
-        <div className="relative bg-gradient-to-br from-white via-amber-50/70 to-rose-50/40 border-2 border-amber-300/80 rounded-3xl p-6 sm:p-10 shadow-lg overflow-hidden">
-          {/* Subtle decorative background watermarks */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-amber-200/20 rounded-full blur-3xl pointer-events-none" />
-          
-          <div className="relative z-10 text-center max-w-xl mx-auto mb-8">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#9E1B32] bg-white px-3.5 py-1 rounded-full border border-amber-300 shadow-2xs inline-flex items-center gap-1.5">
-              <Sparkles className="w-3 h-3 text-amber-500" />
-              <span>{isSpanish ? 'Fundamentos Pedagógicos' : 'Educational Theatre Principles'}</span>
-            </span>
-            <h3 className="font-cinzel text-xl sm:text-2xl lg:text-3xl font-bold text-stone-900 mt-2.5">
-              {isSpanish ? 'El Teatro Educativo en Don Quijote en USA' : 'Educational Theatre in Don Quixote in USA'}
-            </h3>
-            <div className="w-16 h-0.5 bg-gradient-to-r from-amber-400 to-[#9E1B32] mx-auto mt-3 rounded-full" />
-          </div>
-
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {theaterPrinciples.map((principle) => {
-              const Icon = principle.icon;
-              return (
-                <div 
-                  key={principle.titleEs}
-                  className="bg-white/95 border border-amber-200 rounded-2xl p-6 shadow-xs hover:shadow-md hover:border-amber-400 transition-all duration-300 flex flex-col items-start group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-100 to-amber-200/60 text-[#9E1B32] flex items-center justify-center mb-3.5 shadow-2xs border border-amber-300/60 group-hover:scale-105 transition-transform">
-                    <Icon className="w-5 h-5 text-[#9E1B32]" />
-                  </div>
-                  <h4 className="font-cinzel text-base sm:text-lg font-bold text-stone-900 mb-2 group-hover:text-[#1E3A8A] transition-colors">
-                    {isSpanish ? principle.titleEs : principle.titleEn}
-                  </h4>
-                  <p className="font-sans text-xs sm:text-sm text-stone-600 leading-relaxed">
-                    {isSpanish ? principle.descEs : principle.descEn}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
         </div>
 
       </div>

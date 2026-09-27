@@ -88,7 +88,17 @@ DATOS GENERALES DE LA PRODUCCION (TEMPORADA 2026-2027)
 - Idioma: 100% en espanol (con apoyo gestual y contextual accesible desde niveles basicos hasta AP Spanish)
 - Encaje en Horario: Se ajusta a un periodo regular o bloque de asamblea matutino (60 minutos)
 - Espacio Requerido: Auditorio escolar, gimnasio o cafetorium (sistema autonomo, montaje en 30 minutos)
-- Calendario: Presentaciones a partir de ${tentativeMonth || 'Enero 2027'}
+- Calendario: Presentaciones para la temporada 2026-2027 (a partir de ${tentativeMonth || 'Enero 2027'})
+
+==================================================
+ENLACES E IMAGENES DE LA PRODUCCION EN VIVO
+==================================================
+- Cartel Oficial de la Obra: https://postimg.cc/XrF9vqpV
+- 1. Don Quijote en Vivo (Wilderman Garcia): https://postimg.cc/QDvh8ygJ
+- 2. La Obra en el Escenario (Auditorio Escolar): https://postimg.cc/0vhPkBGn
+- 3. En la Trasescena (Preparacion de Camerino): https://postimg.cc/TRRvS86G
+- 4. Con los Estudiantes (Charla y Preguntas): https://postimg.cc/NtZBsz81
+- Galeria Fotografica Completa en Alta Resolucion: https://postimg.cc/gallery/yK2s1bhT
 
 ==================================================
 ALINEACION CURRICULAR Y PEDAGOGICA
@@ -101,18 +111,18 @@ ALINEACION CURRICULAR Y PEDAGOGICA
 RESERVA Y TRAMITACION INSTITUCIONAL (SIN PAGO ADELANTADO)
 ==================================================
 Para facilitar el proceso administrativo a traves de Ordenes de Compra (Purchase Orders / PO) o fondos de distrito:
-1. Puede ingresar al portal oficial de Zeffy: ${zeffyUrl}
-2. Seleccionar la fecha tentativa para ${tentativeMonth || 'Enero 2027'}.
-3. Aplicar el codigo institucional: RSVP
+1. Ingrese al portal oficial de Zeffy: ${zeffyUrl}
+2. Seleccione su fecha tentativa para ${tentativeMonth || 'Enero 2027'}.
+3. Aplique el codigo institucional: RSVP
 4. El balance inicial quedara registrado en $0.00 y coordinaremos los documentos W-9 y facturacion oficial con su distrito escolar.
 
 ==================================================
 DATOS DE LA ENTIDAD PRODUCTORA
 ==================================================
-- Entidad: Teatro for the Soul Inc
+- Entidad: Teatro for the Soul Inc (Organizacion 501(c)(3))
 - Employer Identification Number (EIN): 81-4825762
 - Correo Oficial: ${officialEmail}
-- Sitio Web Oficial: https://www.donquijoteenusa.com
+- Portal Oficial: https://www.donquijoteenusa.com
 
 Quedamos a su disposicion para responder a cualquier pregunta o coordinar detalles para su departamento.
 
@@ -125,16 +135,16 @@ Email: ${officialEmail}
 Sitio Web: https://www.donquijoteenusa.com`;
   };
 
-  // High deliverability styled HTML template
+  // High deliverability styled HTML template with real embedded images
   const getRichHtml = () => {
-    return `<div style="font-family: Arial, Helvetica, sans-serif; max-width: 640px; margin: 0 auto; background-color: #FCF9F2; border: 2px solid #D97706; border-radius: 8px; overflow: hidden; color: #1C1917;">
+    return `<div style="font-family: Arial, Helvetica, sans-serif; max-width: 640px; margin: 0 auto; background-color: #FCF9F2; border: 2px solid #D97706; border-radius: 12px; overflow: hidden; color: #1C1917; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
   
-  <!-- Cabecera Institucional en Azul Marino y Rojo Escarlata (Colores USA + Siglo de Oro) -->
+  <!-- Cabecera Institucional -->
   <div style="background: linear-gradient(135deg, #1E3A8A 0%, #172554 45%, #9E1B32 100%); padding: 26px 22px; text-align: center; color: #FFFFFF; border-bottom: 3px solid #D97706;">
     <div style="font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px; color: #FDE68A; margin-bottom: 6px;">
       Gira Escolar y Universitaria 2026–2027 · Temporada Oficial
     </div>
-    <h1 style="margin: 0; font-size: 24px; font-weight: bold; font-family: Georgia, serif; color: #FFFFFF;">
+    <h1 style="margin: 0; font-size: 26px; font-weight: bold; font-family: Georgia, serif; color: #FFFFFF;">
       Don Quijote en USA
     </h1>
     <p style="margin: 4px 0 0 0; font-size: 14px; font-style: italic; color: #E2E8F0; font-family: Georgia, serif;">
@@ -143,6 +153,20 @@ Sitio Web: https://www.donquijoteenusa.com`;
     <div style="margin-top: 10px; font-size: 12px; color: #CBD5E1;">
       Starring Wilderman García · Producción de Teatro for the Soul Inc · <strong>EIN: 81-4825762</strong>
     </div>
+  </div>
+
+  <!-- Flyer / Banner Promocional Oficial -->
+  <div style="text-align: center; background-color: #0F172A; padding: 12px 16px; border-bottom: 2px solid #D97706;">
+    <a href="https://postimg.cc/XrF9vqpV" target="_blank" style="text-decoration: none; display: inline-block;">
+      <img 
+        src="https://i.postimg.cc/YtMP21y8/IMG-0941.jpg" 
+        alt="Don Quijote en USA - Cartel Oficial de Gira" 
+        style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #F59E0B; display: block; margin: 0 auto; max-height: 320px;"
+      />
+      <div style="color: #FDE68A; font-size: 11px; margin-top: 6px; font-weight: bold;">
+        🔍 Haga clic para ver el Cartel Oficial en Alta Resolución &rarr;
+      </div>
+    </a>
   </div>
 
   <!-- Contenido del Correo -->
@@ -161,6 +185,75 @@ Sitio Web: https://www.donquijoteenusa.com`;
       <p style="margin: 0; font-size: 13.5px; font-style: italic; font-family: Georgia, serif; line-height: 1.55; color: #78350F;">
         &ldquo;Una propuesta viva, dinámica y participativa que recontextualiza el clásico de Cervantes para conectar con los jóvenes de hoy, elevando la comprensión oral, el pensamiento crítico y el aprecio por la herencia hispana.&rdquo;
       </p>
+    </div>
+
+    <!-- MUESTRA FOTOGRÁFICA EN VIVO (4 FOTOS EMBEBIDAS) -->
+    <div style="margin: 24px 0; background-color: #FFFFFF; border: 1px solid #FDE68A; border-radius: 8px; padding: 16px;">
+      <div style="font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; color: #9E1B32; margin-bottom: 12px; text-align: center;">
+        📷 Registro Fotográfico de la Obra en Escena
+      </div>
+
+      <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse: separate; border-spacing: 6px 0;">
+        <tr>
+          <!-- Foto 1: Solo -->
+          <td style="width: 25%; vertical-align: top; text-align: center;">
+            <a href="https://postimg.cc/QDvh8ygJ" target="_blank" style="text-decoration: none; color: inherit;">
+              <img 
+                src="https://i.postimg.cc/QDvh8ygJ/IMG-0943.jpg" 
+                alt="Wilderman García como Don Quijote" 
+                style="width: 100%; height: 110px; object-fit: cover; border-radius: 6px; border: 1px solid #D97706; display: block;"
+              />
+              <div style="font-size: 10.5px; font-weight: bold; color: #1E3A8A; margin-top: 5px;">El Personaje</div>
+              <div style="font-size: 9.5px; color: #64748B; margin-top: 2px;">Wilderman García</div>
+            </a>
+          </td>
+
+          <!-- Foto 2: Escenario -->
+          <td style="width: 25%; vertical-align: top; text-align: center;">
+            <a href="https://postimg.cc/0vhPkBGn" target="_blank" style="text-decoration: none; color: inherit;">
+              <img 
+                src="https://i.postimg.cc/0vhPkBGn/IMG-0945.jpg" 
+                alt="Función en el auditorio escolar" 
+                style="width: 100%; height: 110px; object-fit: cover; border-radius: 6px; border: 1px solid #D97706; display: block;"
+              />
+              <div style="font-size: 10.5px; font-weight: bold; color: #1E3A8A; margin-top: 5px;">En Escena</div>
+              <div style="font-size: 9.5px; color: #64748B; margin-top: 2px;">Auditorio Escolar</div>
+            </a>
+          </td>
+
+          <!-- Foto 3: Trasescena -->
+          <td style="width: 25%; vertical-align: top; text-align: center;">
+            <a href="https://postimg.cc/TRRvS86G" target="_blank" style="text-decoration: none; color: inherit;">
+              <img 
+                src="https://i.postimg.cc/TRRvS86G/IMG-1826.jpg" 
+                alt="En la trasescena y camerino" 
+                style="width: 100%; height: 110px; object-fit: cover; border-radius: 6px; border: 1px solid #D97706; display: block;"
+              />
+              <div style="font-size: 10.5px; font-weight: bold; color: #1E3A8A; margin-top: 5px;">Trasescena</div>
+              <div style="font-size: 9.5px; color: #64748B; margin-top: 2px;">Preparación</div>
+            </a>
+          </td>
+
+          <!-- Foto 4: Estudiantes -->
+          <td style="width: 25%; vertical-align: top; text-align: center;">
+            <a href="https://postimg.cc/NtZBsz81" target="_blank" style="text-decoration: none; color: inherit;">
+              <img 
+                src="https://i.postimg.cc/NtZBsz81/IMG-0950.jpg" 
+                alt="Charla y fotos con estudiantes" 
+                style="width: 100%; height: 110px; object-fit: cover; border-radius: 6px; border: 1px solid #D97706; display: block;"
+              />
+              <div style="font-size: 10.5px; font-weight: bold; color: #1E3A8A; margin-top: 5px;">Con Alumnos</div>
+              <div style="font-size: 9.5px; color: #64748B; margin-top: 2px;">Charla Escolar</div>
+            </a>
+          </td>
+        </tr>
+      </table>
+
+      <div style="text-align: center; margin-top: 10px;">
+        <a href="https://postimg.cc/gallery/yK2s1bhT" target="_blank" style="font-size: 11px; color: #1E3A8A; font-weight: bold; text-decoration: underline;">
+          Ver Galería Fotográfica Completa en Alta Definición &rarr;
+        </a>
+      </div>
     </div>
 
     <!-- Tabla de Especificaciones Clave -->
@@ -216,7 +309,7 @@ Sitio Web: https://www.donquijoteenusa.com`;
       <p style="margin: 4px 0 12px 0; font-size: 12.5px; color: #15803D; line-height: 1.45;">
         Puede asegurar la fecha tentativa en el calendario oficial de Zeffy. Al ingresar el código <strong>RSVP</strong> en el formulario, el sistema reserva la fecha para <strong>${tentativeMonth}</strong> sin requerir tarjeta de crédito, permitiendo el trámite con Purchase Order (PO).
       </p>
-      <a href="${zeffyUrl}" target="_blank" style="display: inline-block; background-color: #9E1B32; color: #FFFFFF; text-decoration: none; font-weight: bold; font-size: 13px; padding: 10px 20px; border-radius: 5px;">
+      <a href="${zeffyUrl}" target="_blank" style="display: inline-block; background-color: #9E1B32; color: #FFFFFF; text-decoration: none; font-weight: bold; font-size: 13px; padding: 11px 22px; border-radius: 6px; box-shadow: 0 2px 8px rgba(158,27,50,0.3);">
         Ver Fechas en Zeffy (Código: RSVP) &rarr;
       </a>
     </div>
@@ -231,7 +324,7 @@ Sitio Web: https://www.donquijoteenusa.com`;
         Teatro for the Soul Inc
       </div>
       <div style="font-size: 12px; color: #64748B; margin-top: 2px;">
-        Entidad Educativa y Teatral · <strong>EIN: 81-4825762</strong>
+        Entidad Educativa y Teatral · 501(c)(3) · <strong>EIN: 81-4825762</strong>
       </div>
       <div style="font-size: 12px; color: #334155; margin-top: 3px;">
         Correo Oficial: <a href="mailto:${officialEmail}" style="color: #9E1B32; font-weight: bold; text-decoration: none;">${officialEmail}</a>
