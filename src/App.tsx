@@ -3,90 +3,47 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
-import TechnicalSpecsSection from './components/TechnicalSpecsSection';
-import AcademicObjectivesSection from './components/AcademicObjectivesSection';
-import InteractiveEducatorGuide from './components/InteractiveEducatorGuide';
-import SynopsisSection from './components/SynopsisSection';
-import CertificateValidatorSection from './components/CertificateValidatorSection';
+import EventOverviewSection from './components/EventOverviewSection';
+import SocialAndContactSection from './components/SocialAndContactSection';
 import FooterSection from './components/FooterSection';
-import DossierModal from './components/DossierModal';
-import CertificateDiplomaModal from './components/CertificateDiplomaModal';
-import { BookingFormState } from './types';
-import { AcademicCertificate } from './data/certificatesData';
 
 export default function App() {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [submittedData, setSubmittedData] = useState<BookingFormState | null>(null);
-  
-  // Certificate diploma viewer modal
-  const [certModalOpen, setCertModalOpen] = useState(false);
-  const [activeCertificate, setActiveCertificate] = useState<AcademicCertificate | null>(null);
-
-  const handleGenerateProposal = (data: BookingFormState) => {
-    setSubmittedData(data);
-    setModalOpen(true);
-  };
-
-  const handleOpenCertificateModal = (cert: AcademicCertificate) => {
-    setActiveCertificate(cert);
-    setCertModalOpen(true);
-  };
-
-  const handleScrollToBooking = () => {
-    const el = document.getElementById('guia-formatos');
+  const handleScrollToSection = (id: string) => {
+    const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF6EE] text-[#2C241D] font-sans selection:bg-[#701A27] selection:text-[#FAF6EE] flex flex-col">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#1C1917] font-sans selection:bg-[#7A1C2C] selection:text-white flex flex-col antialiased">
       
-      {/* Top Fixed Header with Domain Branding */}
-      <Navbar onOpenBooking={handleScrollToBooking} />
+      {/* 1. Header with direct Zeffy RSVP integration */}
+      <Navbar
+        onScrollToOverview={() => handleScrollToSection('event-overview')}
+        onScrollToCurriculum={() => handleScrollToSection('event-overview')}
+        onScrollToBooking={() => handleScrollToSection('booking-contact')}
+      />
 
-      {/* Main Page Sections */}
       <main className="grow">
-        
-        {/* 1. Header / Encabezado Principal */}
-        <HeroSection onExploreSelection={handleScrollToBooking} />
+        {/* 2. Hero: Title, Official Synopsis, Key Specs, Promo Code RSVP & Booking CTA */}
+        <HeroSection
+          onOverviewClick={() => handleScrollToSection('event-overview')}
+          onCurriculumClick={() => handleScrollToSection('event-overview')}
+        />
 
-        {/* 2. Sección de Presentación / Ficha Técnica (Gabriel Villegas, Wilderman García, Teatro for the Soul) */}
-        <TechnicalSpecsSection />
+        {/* 3. Comprehensive Event Overview & Standards Alignment for Educators */}
+        <EventOverviewSection />
 
-        {/* 3. Sección de Objetivos Académicos (4 Pilares Pedagógicos alineados) */}
-        <AcademicObjectivesSection />
-
-        {/* 4. Sección Interactiva: Guía de Selección para Educadores (Paso 1: Formato, Paso 2: Taller) */}
-        <InteractiveEducatorGuide onGenerateProposal={handleGenerateProposal} />
-
-        {/* 5. Sección de Sinopsis (Cuerpo Central - La Galatea 2da parte, Cenizas, Viaje temporal al siglo XXI en USA) */}
-        <SynopsisSection />
-
-        {/* 6. Sección de Validación de Certificados Académicos & Acreditación Institucional */}
-        <CertificateValidatorSection onViewCertificate={handleOpenCertificateModal} />
-
+        {/* 4. Booking & Direct Contact (Zeffy Integration, Emails & Official Channels) */}
+        <SocialAndContactSection />
       </main>
 
-      {/* 7. Footer / Pie de Página */}
+      {/* 5. Dignified Educational Theater Footer */}
       <FooterSection />
-
-      {/* Printable / Downloadable Academic Proposal Modal */}
-      <DossierModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        data={submittedData}
-      />
-
-      {/* Official Certificate / Diploma Printable Modal */}
-      <CertificateDiplomaModal
-        isOpen={certModalOpen}
-        onClose={() => setCertModalOpen(false)}
-        certificate={activeCertificate}
-      />
 
     </div>
   );

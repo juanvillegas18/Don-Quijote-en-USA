@@ -25,7 +25,7 @@ export const THEATER_FORMATS: TheaterFormat[] = [
   },
   {
     id: 'medio',
-    title: 'Función Media',
+    title: 'Formato Mediano',
     subtitle: 'Para grupos medianos y espacios flexibles',
     capacity: 'De 21 a 75 personas',
     recommendedSpace: 'Anfiteatro, salón de conferencias o biblioteca',
@@ -42,8 +42,8 @@ export const THEATER_FORMATS: TheaterFormat[] = [
   },
   {
     id: 'completo',
-    title: 'Experiencia Teatral Completa',
-    subtitle: 'Gran función para todo el público',
+    title: 'Formato Grande',
+    subtitle: 'Para grupos grandes y espacios amplios',
     capacity: 'Más de 75 personas',
     recommendedSpace: 'Auditorio escolar o teatro tradicional',
     description: 'La versión teatral completa con luces, música y ambientación. Diseñada para funciones grandes con muchos estudiantes y maestros.',
@@ -58,6 +58,43 @@ export const THEATER_FORMATS: TheaterFormat[] = [
     recommendedFor: 'Toda la comunidad escolar: Elemental, Intermedia, Superior y Universitaria'
   }
 ];
+
+export const AUTHOR_BIO = {
+  name: 'Prof. Juan Gabriel Villegas',
+  role: 'Dramaturgo, Educador & Director Creativo',
+  degrees: [
+    'Doctorado en Educación (Fase Final) — University of Central Florida (UCF)',
+    'Maestría en Artes en Español — University of Central Florida (UCF)',
+    'Bachillerato en Administración de Empresas — Universidad de Puerto Rico (UPR)'
+  ],
+  academicExperience: [
+    'Profesor de Español en Valencia College',
+    'Profesor en Ana G. Méndez University',
+    'Especialista en pedagogía de la lengua y capacitación laboral'
+  ],
+  organizations: [
+    'Fundador y Director Creativo de Teatro for the Soul',
+    'Fundador del Conservatorio de Artes Escénicas de Orlando',
+    'Fundador de la Academia de Cine y Teatro de Puerto Rico'
+  ],
+  theatricalWorks: [
+    'Don Quijote en USA (y Don Quijote versus Bad Bunny)',
+    'Me casé por papeles',
+    'El rey del café',
+    'Adaptación de El médico a palos'
+  ],
+  fullBio: `El Prof. Juan Gabriel Villegas es un educador, dramaturgo y gestor cultural puertorriqueño radicado en la Florida Central, cuya trayectoria destaca por integrar la pedagogía de la lengua, la capacitación laboral de empleados y las artes escénicas. Posee una formación académica compuesta por un bachillerato en Administración de Empresas por la Universidad de Puerto Rico (UPR), una Maestría en Artes de la Universidad de Central Florida (UCF) —de cuyo programa de español es egresado— y se encuentra en la fase final de su Doctorado en Educación en la misma institución. Su experiencia en el ámbito académico incluye su labor docente como profesor de español en instituciones de educación superior como Valencia College y Ana G. Méndez University.
+
+Como emprendedor enfocado en el desarrollo artístico y humano, es el fundador y director creativo de la compañía Teatro for the Soul, así como el fundador del Conservatorio de Artes Escénicas de Orlando y de la Academia de Cine y Teatro de Puerto Rico. A través de estas organizaciones, promueve la formación integral de actores y profesionales, aplicando el teatro como una herramienta pedagógica para el aprendizaje del idioma, el fortalecimiento de la salud mental y la preservación de la identidad hispana en la diáspora. Asimismo, aplica metodologías de diseño instruccional y desarrollo pedagógico en entornos organizacionales y corporativos para la formación de personal.
+
+Su propuesta dramatúrgica tiene un marcado enfoque educativo y divulgativo enfocado en la recontextualización de los clásicos literarios para conectar con estudiantes y audiencias modernas. Es autor de piezas teatrales como Don Quijote en USA (y su propuesta previa Don Quijote versus Bad Bunny), Me casé por papeles, El rey del café y su adaptación de El médico a palos. Su trabajo investigativo y creativo aborda el teatro como espacio de capacitación laboral, desarrollo de competencias sociolingüísticas y revitalización cultural de la comunidad hispana en Estados Unidos.`
+};
+
+export const ACTOR_BIO = {
+  name: 'Wilderman García',
+  role: 'Actor Protagónico (Don Quijote)',
+  description: 'Actor profesional de destacada trayectoria en teatro clásico y contemporáneo. Encarna a un Don Quijote enérgico, carismático y profundamente humano, con un dominio escénico que cautiva a audiencias escolares de todas las edades a través de la improvisación y la interacción en vivo.'
+};
 
 export const POST_SHOW_WORKSHOPS: PostShowWorkshop[] = [
   {
@@ -152,21 +189,101 @@ export const ACADEMIC_PILLARS: AcademicPillar[] = [
 
 export const TECHNICAL_DATA = {
   title: 'Don Quijote en USA',
-  subtitle: 'Unipersonal de Teatro Educativo y Experiencia Académica en Español',
-  genre: 'Monólogo Teatral / Comedia Educativa',
+  subtitle: 'Comedia Teatral Unipersonal & Experiencia Inmersiva en Español',
+  genre: 'Comedia Teatral Unipersonal / Interacción en Vivo',
   author: 'Gabriel Villegas',
   actor: 'Wilderman García',
   producer: 'Teatro for the Soul',
-  duration: '60 minutos de obra (+ taller a elegir)',
-  language: '100% Español (fácil de entender con apoyo visual y contexto)',
-  classification: 'Apto para todos los niveles: Elemental (K-5), Intermedia (6-8), Superior (9-12) y Universidad',
-  stageRequirements: 'Totalmente adaptable a cualquier espacio de la escuela',
+  duration: '60 minutos de función (+ taller interactivo a elección)',
+  language: '100% Español (ágil, dinámico y con alto apoyo contextual)',
+  classification: 'Apto para todos los niveles: K-5, Middle School, High School y Universidad',
+  stageRequirements: 'Sistema 100% autónomo y autoportante (auditorio, gimnasio, teatro o salón múltiple)',
   domain: 'donquijoteusa.com'
 };
 
+export const GOVERNMENT_CREDENTIALS = {
+  federal: {
+    system: 'SAM.gov (Gobierno Federal de EE. UU.)',
+    uei: 'FJV5QQ2QM9M8',
+    cage: '1Z2Q0',
+    status: 'Activo / Registrado'
+  },
+  puertoRico: {
+    system: 'Gobierno de Puerto Rico (RUP)',
+    rupNumber: '202561897',
+    status: 'Proveedor de Servicios Profesionales Registrado'
+  },
+  complianceNotes: 'Aceptamos Órdenes de Compra (Purchase Orders / PO), fondos Title I, Title II, Title III, Title IV, SIG, ESSER y subvenciones culturales de distritos escolares y universidades.'
+};
+
+export interface FundingSource {
+  id: string;
+  code: string;
+  name: string;
+  target: string;
+  description: string;
+  highlightTag: string;
+}
+
+export const ELIGIBLE_FUNDING_SOURCES: FundingSource[] = [
+  {
+    id: 'title-i',
+    code: 'Título I, Parte A',
+    name: 'Intervención y Nivelación en Lectoescritura',
+    target: 'Competencia lingüística & lectoescritura en español',
+    description: 'Para programas de intervención académica estructurada que fortalecen la competencia lingüística y lectoescritura en Español.',
+    highlightTag: 'Prioridad de Lectura'
+  },
+  {
+    id: 'title-ii',
+    code: 'Título II, Parte A',
+    name: 'Desarrollo Profesional & Modelos Pedagógicos',
+    target: 'Capacitación docente e innovación curricular',
+    description: 'Como apoyo al desarrollo profesional docente (indirecto) al proveer modelos instruccionales y herramientas pedagógicas basadas en evidencia.',
+    highlightTag: 'Desarrollo Docente'
+  },
+  {
+    id: 'title-iii',
+    code: 'Título III, Parte A',
+    name: 'Adquisición del Lenguaje para Multilingües',
+    target: 'Estudiantes bilingües / ELLs / Dual Language',
+    description: 'Para el desarrollo de lenguaje académico avanzado en español en estudiantes multilingües.',
+    highlightTag: 'Dual Language / ELL'
+  },
+  {
+    id: 'title-iv',
+    code: 'Título IV, Parte A',
+    name: 'Enriquecimiento Académico Integral y Artes',
+    target: 'Educación integral, artes escénicas y pensamiento crítico',
+    description: 'Para promover el enriquecimiento educativo y el desarrollo integral del estudiante a través de experiencias artísticas y pensamiento crítico.',
+    highlightTag: 'Artes & Pensamiento Crítico'
+  },
+  {
+    id: 'sig',
+    code: 'Fondos SIG',
+    name: 'Mejoramiento Escolar (School Improvement)',
+    target: 'Escuelas en plan de transformación y refuerzo',
+    description: 'Integrado como estrategia de apoyo en escuelas que requieran fortalecer resultados en lectura y escritura.',
+    highlightTag: 'Transformación Escolar'
+  },
+  {
+    id: 'esser',
+    code: 'Fondos ESSER',
+    name: 'Recuperación y Aceleración Académica',
+    target: 'Superación de rezagos en comprensión lectora',
+    description: 'Para atender directamente rezagos en comprensión lectora mediante práctica guiada e inmersiva.',
+    highlightTag: 'Aceleración Académica'
+  }
+];
+
 export const SYNOPSIS_TEXT = {
-  quote: '« Sabe, Sancho amigo, que yo nací por querer del cielo en esta nuestra edad de hierro para resucitar en ella la dorada... »',
-  excerptP1: 'Entre las cenizas de su biblioteca quemada, un triste Don Quijote encuentra el único libro que se salvó del fuego: la segunda parte de «La Galatea». Con el libro en sus manos, una fuerza misteriosa abre un portal en el tiempo y lo transporta desde La Mancha hasta el presente.',
-  excerptP2: 'Don Quijote despierta en pleno siglo XXI en los Estados Unidos. Sorprendido pero valiente, descubre un nuevo mundo lleno de rascacielos gigantes, autopistas veloces y pantallas digitales que no dejan de brillar.',
-  excerptP3: 'Convencido de que su amada Dulcinea del Toboso está encantada y oculta en suelo estadounidense, Don Quijote inicia una nueva aventura. Junto al recuerdo de su fiel Sancho Panza y su caballo Rocinante, invita a los estudiantes a ayudarle a romper el hechizo, recordando a todos que la nobleza, la justicia y la magia de soñar siguen vivas.'
+  quote: '«El que lee mucho y anda mucho, ve mucho y sabe mucho.»',
+  academicSummary: '«Don Quijote en USA» es una comedia teatral unipersonal e inmersiva de 60 minutos creada para la comunidad escolar y universitaria. Tras rescatar el manuscrito inédito de «La Galatea, 2ª Parte», Don Quijote es transportado a los Estados Unidos del siglo XXI. Al encontrarse en un entorno contemporáneo, el caballero rompe la cuarta pared e integra a los estudiantes como co-protagonistas de su travesía, conectando el clásico cervantino con la reflexión lingüística, el pensamiento crítico y el orgullo por el idioma español.',
+  curriculumFocus: 'Diseñada con alto apoyo contextual y dinamismo cómico, la obra permite a estudiantes de todos los niveles de dominio (desde principiantes hasta AP Spanish y universitarios) comprender el texto, disfrutar el lenguaje clásico adaptado y reflexionar sobre la palabra, la justicia y los valores humanos.',
+  highlights: [
+    'Función unipersonal de 60 minutos 100% en español con alta interacción.',
+    'Dramaturgia pedagógica original de Gabriel Villegas y actuación de Wilderman García.',
+    'Alineada a estándares ACTFL, Literatura AP Spanish y desarrollo del lenguaje Dual Language.',
+    'Material didáctico previo y posterior incluido para el trabajo docente en el aula.'
+  ]
 };

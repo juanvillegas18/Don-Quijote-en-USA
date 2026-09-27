@@ -1,6 +1,6 @@
 {
   "name": "Don Quijote en USA",
-  "description": "Portal informativo y de reserva académica para la obra de teatro educativo Don Quijote en USA en donquijoteusa.com.",
+  "description": "Don Quijote en USA: A Live Theatrical Performance & Educational Experience. Modern adaptation of Miguel de Cervantes' classic starring Wilderman García.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

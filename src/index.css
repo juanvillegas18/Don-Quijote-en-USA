@@ -4,108 +4,109 @@
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-display: "Cinzel", Georgia, serif;
-  --font-ornate: "Cinzel Decorative", serif;
 
-  --color-parchment-light: #FAF6EE;
-  --color-parchment-base: #F4EEDF;
-  --color-parchment-dark: #E8DDCA;
-  
-  --color-gold-light: #F0D38D;
-  --color-gold-base: #C89D35;
-  --color-gold-dark: #8F6A18;
-  
-  --color-burgundy-light: #9B2838;
-  --color-burgundy-base: #701A27;
-  --color-burgundy-dark: #4A0E18;
-
-  --color-leather-base: #3B2314;
-  --color-leather-dark: #24140B;
-  
-  --color-ink-midnight: #161A22;
-  --color-ink-sepia: #2D241E;
+  --color-brand-wine: #7A1C2C;
+  --color-brand-wine-dark: #58121E;
+  --color-brand-gold: #B8860B;
+  --color-brand-gold-light: #D4AF37;
+  --color-brand-parchment: #FAF8F5;
+  --color-brand-ivory: #FDFBF7;
+  --color-brand-ink: #1C1917;
+  --color-brand-slate: #44403C;
+  --color-brand-border: #E7E2D8;
 }
 
 html {
   scroll-behavior: smooth;
+  background-color: #FAF8F5;
+  color: #1C1917;
 }
 
-/* Medieval parchment textures and decorative borders */
-.parchment-bg {
-  background-color: #F6F1E5;
-  background-image: radial-gradient(#E8DFC9 1px, transparent 1px), radial-gradient(#E8DFC9 1px, #F6F1E5 1px);
-  background-size: 28px 28px;
-  background-position: 0 0, 14px 14px;
+/* Custom typography shortcuts */
+.font-cinzel {
+  font-family: var(--font-display);
 }
 
-.manuscript-card {
-  background: linear-gradient(135deg, #FBF8F1 0%, #F5EFE1 100%);
-  border: 1px solid #D8C8AF;
-  box-shadow: 0 4px 20px -2px rgba(59, 35, 20, 0.07), 0 1px 3px 0 rgba(59, 35, 20, 0.04);
+.font-garamond {
+  font-family: var(--font-serif);
 }
 
-.gold-emboss {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 0 10px rgba(200, 157, 53, 0.3);
+/* Elegant Buttons for Educators */
+.btn-primary-wine {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #7A1C2C;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  padding: 0.75rem 1.6rem;
+  border: 1px solid #58121E;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(122, 28, 44, 0.2);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
 }
 
-.ornate-border-double {
-  border: 4px double #C89D35;
+.btn-primary-wine:hover {
+  background-color: #631422;
+  box-shadow: 0 4px 16px rgba(122, 28, 44, 0.3);
+  transform: translateY(-1px);
 }
 
-.ornate-border-engraved {
-  position: relative;
-}
-.ornate-border-engraved::before {
-  content: '';
-  position: absolute;
-  inset: 4px;
-  border: 1px solid rgba(200, 157, 53, 0.4);
-  pointer-events: none;
-}
-
-.gold-gradient-text {
-  background: linear-gradient(135deg, #E2C068 0%, #C89D35 50%, #8F6A18 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Ornate corner bracket styling */
-.corner-bracket-tl {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  width: 14px;
-  height: 14px;
-  border-top: 2px solid #C89D35;
-  border-left: 2px solid #C89D35;
+.btn-gold-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #B8860B 0%, #996D05 100%);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  padding: 0.75rem 1.6rem;
+  border: 1px solid #8A6204;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(184, 134, 11, 0.25);
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
-.corner-bracket-tr {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 14px;
-  height: 14px;
-  border-top: 2px solid #C89D35;
-  border-right: 2px solid #C89D35;
+.btn-gold-accent:hover {
+  background: linear-gradient(135deg, #CA930C 0%, #A87706 100%);
+  box-shadow: 0 4px 14px rgba(184, 134, 11, 0.35);
+  transform: translateY(-1px);
 }
 
-.corner-bracket-bl {
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  width: 14px;
-  height: 14px;
-  border-bottom: 2px solid #C89D35;
-  border-left: 2px solid #C89D35;
+.btn-outline-refined {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  color: #1C1917;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+  padding: 0.75rem 1.4rem;
+  border: 1px solid #D6D0C4;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
-.corner-bracket-br {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  width: 14px;
-  height: 14px;
-  border-bottom: 2px solid #C89D35;
-  border-right: 2px solid #C89D35;
+.btn-outline-refined:hover {
+  background-color: #F5F1E9;
+  border-color: #7A1C2C;
+  color: #7A1C2C;
 }
 
+/* Subtle parchment card texture */
+.card-dossier {
+  background-color: #FFFFFF;
+  border: 1px solid #E7E2D8;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
