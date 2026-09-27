@@ -5,8 +5,10 @@
 
 import React from 'react';
 import { Mail, Instagram, Globe, GraduationCap, Sparkles, Feather } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function FooterSection() {
+  const { isSpanish } = useLanguage();
   const officialEmail = "teatroforthesoul@gmail.com";
 
   return (
@@ -41,7 +43,9 @@ export default function FooterSection() {
             </p>
             
             <p className="text-[11px] text-stone-400 font-sans">
-              A Live Theatrical Performance &amp; Educational Experience in Spanish · Starring Wilderman García · Produced by Teatro for the Soul Inc
+              {isSpanish 
+                ? 'Obra teatral y experiencia pedagógica en vivo 100% en español · Protagonizada por Wilderman García · Producida por Teatro for the Soul Inc'
+                : 'A Live Theatrical Performance & Educational Experience in Spanish · Starring Wilderman García · Produced by Teatro for the Soul Inc'}
             </p>
           </div>
 

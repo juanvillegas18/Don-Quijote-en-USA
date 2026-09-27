@@ -2,6 +2,17 @@
   publish = "dist"
   command = "npm run build"
 
+[[redirects]]
+  from = "http://*"
+  to = "https://:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]
@@ -11,4 +22,4 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; connect-src 'self' https: data: blob:; img-src 'self' https: data: blob:; font-src 'self' https: data:; style-src 'self' https: 'unsafe-inline'; script-src 'self' https: 'unsafe-inline' 'unsafe-eval';"
+    Content-Security-Policy = "default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; upgrade-insecure-requests; connect-src 'self' https: data: blob:; img-src 'self' https: data: blob:; font-src 'self' https: data: fonts.gstatic.com; style-src 'self' https: 'unsafe-inline' fonts.googleapis.com; script-src 'self' https: 'unsafe-inline' 'unsafe-eval';"

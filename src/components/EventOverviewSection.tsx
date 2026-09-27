@@ -7,318 +7,266 @@ import React, { useState } from 'react';
 import { 
   Drama, 
   Clock, 
-  MessageSquare, 
-  Hourglass, 
-  Languages, 
-  GraduationCap, 
+  Building2, 
+  FileCheck2, 
   Copy, 
   Check, 
-  ChevronDown, 
-  ChevronUp, 
   ExternalLink, 
   Ticket, 
-  Sparkles, 
-  Feather,
-  Users
+  Calculator,
+  GraduationCap,
+  HelpCircle
 } from 'lucide-react';
-import quijoteOverviewBg from '../assets/images/quijote_overview_minimalist_bg_1790503674706.jpg';
 import { ActiveTab } from './Navbar';
+import { useLanguage } from '../context/LanguageContext';
 
 interface EventOverviewSectionProps {
   onNavigateTab: (tab: ActiveTab) => void;
 }
 
 export default function EventOverviewSection({ onNavigateTab }: EventOverviewSectionProps) {
+  const { isSpanish } = useLanguage();
   const zeffyUrl = "https://www.zeffy.com/en-US/ticketing/don-quijote-en-usa";
-  const officialEmail = "teatroforthesoul@gmail.com";
-  const [expandedCard, setExpandedCard] = useState<number | null>(0);
   const [copiedMemo, setCopiedMemo] = useState(false);
 
-  const overviewCards = [
+  const decisionCards = [
     {
-      number: "01",
-      chapter: "Capítulo I · El Actor y la Puesta",
-      title: "The Production",
-      spec: "Solo performance starring Colombian actor Wilderman García.",
-      detail: "A tour-de-force solo performance bringing Cervantes' timeless world to life through dynamic physical acting, classical verse, and humor.",
-      badge: "Cast & Format",
+      id: "produccion",
       icon: Drama,
-      colorClass: "border-amber-300 bg-gradient-to-br from-amber-50 via-white to-amber-50/30",
-      iconBg: "bg-amber-500 text-white",
-      badgeStyle: "bg-amber-100 text-amber-900 border-amber-300",
-      pedagogicalImpact: "Exposes students to professional Latin American theatrical craft and character transformation, demonstrating how one performer brings an entire universe alive.",
-      studentDiscussion: "How does the actor use body language and voice modulation to shift between Don Quijote, Sancho Panza, and modern perspectives?",
-      teacherTip: "Great for drama, public speaking, and Spanish conversation classes."
+      iconBg: "bg-[#9E1B32] text-white",
+      borderColor: "border-rose-300",
+      tagEs: "Obra Teatral",
+      tagEn: "The Show",
+      titleEs: "1. La Producción y el Actor",
+      titleEn: "1. The Show & The Actor",
+      headlineEs: "Wilderman García · Monólogo Teatral",
+      headlineEn: "Wilderman García · Solo Performance",
+      bulletsEs: [
+        "100% en español con comedia física accesible para todos los niveles escolares (K–12 y Universidad).",
+        "Alineado con los estándares nacionales ACTFL y el programa de AP Spanish Literature."
+      ],
+      bulletsEn: [
+        "100% in Spanish with physical comedy accessible for all grade levels (K–12 and University).",
+        "Aligned with ACTFL national standards and the AP Spanish Literature curriculum."
+      ]
     },
     {
-      number: "02",
-      chapter: "Capítulo II · Los Molinos de Viento",
-      title: "Show Duration",
-      spec: "45 minutes.",
-      detail: "Fast-paced and captivating, calibrated to maintain student focus and energy throughout the entire theatrical journey.",
-      badge: "Main Performance",
+      id: "tiempo",
       icon: Clock,
-      colorClass: "border-blue-300 bg-gradient-to-br from-blue-50 via-white to-blue-50/30",
-      iconBg: "bg-blue-600 text-white",
-      badgeStyle: "bg-blue-100 text-blue-900 border-blue-300",
-      pedagogicalImpact: "Carefully paced dramatic arc that sustains intense student engagement without cognitive fatigue.",
-      studentDiscussion: "Which scenes felt most comedic, and which felt poetic or dramatic? Why?",
-      teacherTip: "Leaves ample time before or after the bell for classroom transition."
+      iconBg: "bg-[#1E3A8A] text-white",
+      borderColor: "border-blue-300",
+      tagEs: "Horario Escolar",
+      tagEn: "School Bell Schedule",
+      titleEs: "2. Tiempo y Horario",
+      titleEn: "2. Timing & Bell Schedule",
+      headlineEs: "60 Minutos Exactos (Bloque Escolar)",
+      headlineEn: "60 Minutes Exact (Fits Bell Period)",
+      bulletsEs: [
+        "45 minutos de obra continua + 15 minutos de tertulia interactiva en español con los alumnos.",
+        "Se adapta con exactitud al periodo regular o bloque de asamblea escolar."
+      ],
+      bulletsEn: [
+        "45 minutes of continuous stage play + 15 minutes of live interactive Q&A in Spanish.",
+        "Fits perfectly into a single class period or school assembly block."
+      ]
     },
     {
-      number: "03",
-      chapter: "Capítulo III · La Tertulia Cervantina",
-      title: "Academic Discussion (Tertulia)",
-      spec: "15-minute interactive post-show talkback with the actor.",
-      detail: "Direct educational dialogue encouraging students to ask questions, practice oral Spanish, and analyze literary and cultural themes.",
-      badge: "Pedagogy & Talkback",
-      icon: MessageSquare,
-      colorClass: "border-emerald-300 bg-gradient-to-br from-emerald-50 via-white to-emerald-50/30",
-      iconBg: "bg-emerald-600 text-white",
-      badgeStyle: "bg-emerald-100 text-emerald-900 border-emerald-300",
-      pedagogicalImpact: "Breaks the fourth wall, inviting students to use spoken Spanish in real time with an authentic native artist.",
-      studentDiscussion: "What does Don Quijote's quest mean to modern teenagers and students in the United States today?",
-      teacherTip: "Prepare 2-3 student questions in advance during class for eager volunteers."
+      id: "espacio",
+      icon: Building2,
+      iconBg: "bg-amber-600 text-white",
+      borderColor: "border-amber-300",
+      tagEs: "Montaje Fácil",
+      tagEn: "Easy Setup",
+      titleEs: "3. Espacio y Logística",
+      titleEn: "3. Space & Logistics",
+      headlineEs: "Auditorio, Gimnasio o Cafetorium",
+      headlineEn: "Auditorium, Gym, or Cafeteria",
+      bulletsEs: [
+        "Montaje ágil en 30 minutos sin requerimientos técnicos complicados para la escuela.",
+        "Apto para grupos pequeños (30 alumnos) o asambleas generales de más de 300 estudiantes."
+      ],
+      bulletsEn: [
+        "Fast 30-minute load-in with no complex technical setup required from school staff.",
+        "Suitable for small classrooms (30 students) or general assemblies of 300+ students."
+      ]
     },
     {
-      number: "04",
-      chapter: "Capítulo IV · El Bloque Escolar",
-      title: "Total Event Time",
-      spec: "60 minutes.",
-      detail: "Designed to slot comfortably into a standard school bell schedule, assembly block, or university class period with no scheduling conflicts.",
-      badge: "Schedule Fit",
-      icon: Hourglass,
-      colorClass: "border-purple-300 bg-gradient-to-br from-purple-50 via-white to-purple-50/30",
-      iconBg: "bg-purple-600 text-white",
-      badgeStyle: "bg-purple-100 text-purple-900 border-purple-300",
-      pedagogicalImpact: "Zero administrative friction for school administrators and bell schedule coordinators.",
-      studentDiscussion: "How much storytelling can be accomplished in one single hour?",
-      teacherTip: "Can be booked back-to-back in morning blocks for different grade levels."
-    },
-    {
-      number: "05",
-      chapter: "Capítulo V · La Lengua de Cervantes",
-      title: "Language & Comprehension",
-      spec: "Performed entirely in Spanish.",
-      detail: "100% Spanish immersion. Rich visual storytelling and clear vocal articulation make the show accessible to Spanish learners and native speakers alike.",
-      badge: "100% Spanish Immersion",
-      icon: Languages,
-      colorClass: "border-rose-300 bg-gradient-to-br from-rose-50 via-white to-rose-50/30",
-      iconBg: "bg-rose-600 text-white",
-      badgeStyle: "bg-rose-100 text-rose-900 border-rose-300",
-      pedagogicalImpact: "Multimodal comprehension: students rely on expressive gesture, facial cues, comedic physical cues, and context.",
-      studentDiscussion: "Even if you didn't catch every archaic word, how did the physical acting explain what was happening?",
-      teacherTip: "Suitable for Level 1 novices through Heritage Speakers and AP Literature scholars."
-    },
-    {
-      number: "06",
-      chapter: "Capítulo VI · Para Todo Público",
-      title: "Target Audience",
-      spec: "Suitable for all ages, from elementary school through high school and university levels.",
-      detail: "Content and physical comedy are family-friendly and intellectually layered, adaptable across K–12 and collegiate Spanish departments.",
-      badge: "Elementary to University",
-      icon: GraduationCap,
-      colorClass: "border-orange-300 bg-gradient-to-br from-orange-50 via-white to-orange-50/30",
-      iconBg: "bg-orange-500 text-white",
-      badgeStyle: "bg-orange-100 text-orange-900 border-orange-300",
-      pedagogicalImpact: "Layered theatrical text: younger learners revel in slapstick humor and chivalric armor, while advanced students examine philosophical ideals.",
-      studentDiscussion: "What are modern 'windmills' or impossible dreams we battle today?",
-      teacherTip: "Whole-school assemblies or combined World Language department events."
+      id: "financiamiento",
+      icon: FileCheck2,
+      iconBg: "bg-emerald-700 text-white",
+      borderColor: "border-emerald-300",
+      tagEs: "EIN y Fondos",
+      tagEn: "Vendor & Grants",
+      titleEs: "4. Fondos y Contratación",
+      titleEn: "4. Funding & Contracting",
+      headlineEs: "Teatro for the Soul Inc · EIN: 81-4825762",
+      headlineEn: "Teatro for the Soul Inc · EIN: 81-4825762",
+      bulletsEs: [
+        "Elegible para fondos federales Título I, II, III (ELL / Dual Language) y Título IV.",
+        "Aceptamos Órdenes de Compra (PO) escolares y reserva con $0 inicial usando el código 'RSVP'."
+      ],
+      bulletsEn: [
+        "Eligible for federal Title I, II, III (ELL / Dual Language), and Title IV funding.",
+        "We accept district Purchase Orders (POs) and $0 down booking with promo code 'RSVP'."
+      ]
     }
   ];
 
   const handleCopySummary = () => {
-    const text = `DON QUIJOTE EN USA: A Live Theatrical Performance & Educational Experience
+    const text = isSpanish
+      ? `DON QUIJOTE EN USA: DATOS CLAVE
+Entidad: Teatro for the Soul Inc (EIN: 81-4825762)
+Actor: Wilderman García (Actor Profesional)
+Duración: 60 minutos (45 min obra + 15 min tertulia con estudiantes)
+Idioma: Español estándar comprensible para K-12 y Universidad
+Montaje: 30 minutos en auditorio, gimnasio o cafetorium
+Fondos: Acepta Título I-IV y Órdenes de Compra (PO)
+Reserva: ${zeffyUrl} (Código: RSVP)
+Email: teatroforthesoul@gmail.com`
+      : `DON QUIXOTE IN USA: KEY DETAILS
 Producer: Teatro for the Soul Inc (EIN: 81-4825762)
-Starring: Wilderman García (Colombian Actor)
-Duration: 60 Minutes Total (45-Minute Show + 15-Minute Academic Tertulia Talkback)
-Language: Performed 100% in Spanish (Accessible for Elementary through University)
-Mission: Immersive educational experience designed to promote language, heritage, and Hispanic culture while aligning with language learning objectives.
-Curriculum Fit: ACTFL World-Readiness Standards & AP Spanish Literature
-Host Requirements: School auditorium, multi-purpose room, or lecture hall (minimal technical requirements)
-Official Reservation Portal: ${zeffyUrl} (Promo code RSVP for $0 upfront fee)
-Official Contact: ${officialEmail} | www.donquijoteenusa.com`;
+Actor: Wilderman García (Professional Actor)
+Duration: 60 minutes (45 min play + 15 min student Q&A)
+Language: Clear Spanish accessible for K-12 and College
+Setup: 30-min setup in auditorium, gym, or cafeteria
+Funding: Title I-IV eligible and School Purchase Orders (POs)
+Booking: ${zeffyUrl} (Code: RSVP)
+Email: teatroforthesoul@gmail.com`;
+
     navigator.clipboard.writeText(text);
     setCopiedMemo(true);
     setTimeout(() => setCopiedMemo(false), 2500);
   };
 
   return (
-    <section id="event-overview" className="relative py-16 sm:py-20 bg-[#FCF9F2] border-b-2 border-amber-300/80 overflow-hidden">
+    <section id="event-overview" className="relative py-14 sm:py-18 bg-[#FCF9F2] border-b-2 border-amber-300/80">
       
-      {/* Background Medieval Vignettes */}
-      <div 
-        className="absolute inset-0 pointer-events-none select-none z-0 opacity-[0.16] mix-blend-multiply"
-        style={{
-          backgroundImage: `url(${quijoteOverviewBg})`,
-          backgroundPosition: 'left 15% center',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#FCF9F2] via-transparent to-[#FCF9F2] pointer-events-none z-0" />
-
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
-        {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <div className="inline-flex items-center gap-2 text-xs font-sans font-bold tracking-wider uppercase bg-gradient-to-r from-amber-100 via-rose-100 to-amber-100 text-[#9E1B32] mb-3 px-3.5 py-1 rounded-full border border-rose-300 shadow-2xs">
-            <Feather className="w-3.5 h-3.5 text-amber-600" />
-            <span>Essential Production Specifications</span>
+        {/* Concise Header */}
+        <div className="max-w-2xl mx-auto text-center mb-8">
+          <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold tracking-wider uppercase text-[#1E3A8A] bg-blue-100/80 px-3 py-1 rounded-full border border-blue-200 mb-2.5">
+            <span>{isSpanish ? 'Información para Coordinadores' : 'Coordinator Quick Facts'}</span>
           </div>
-          
-          <h2 className="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight leading-tight">
-            The 6 Educational Pillars
+
+          <h2 className="font-cinzel text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-stone-900 leading-tight">
+            {isSpanish ? (
+              <>
+                <span className="text-[#1E3A8A]">Todo lo que su Escuela </span>
+                <span className="text-[#9E1B32]">Necesita Saber</span>
+              </>
+            ) : (
+              <>
+                <span className="text-[#1E3A8A]">Everything Your School </span>
+                <span className="text-[#9E1B32]">Needs to Know</span>
+              </>
+            )}
           </h2>
-          
-          <p className="font-garamond text-lg sm:text-xl text-stone-700 mt-2.5 italic">
-            Calibrated for standard school schedules, high pedagogical impact, and effortless venue staging.
+
+          <p className="font-sans text-sm sm:text-base text-stone-600 mt-2">
+            {isSpanish
+              ? '4 puntos clave para autorizar la función en su colegio o distrito escolar.'
+              : '4 key points to easily approve the performance at your school or district.'}
           </p>
         </div>
 
-        {/* 6 Specification Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {overviewCards.map((card, index) => {
+        {/* 4 Clean Decision Cards (Without image icons!) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+          {decisionCards.map((card) => {
             const Icon = card.icon;
-            const isExpanded = expandedCard === index;
             return (
-              <div 
-                key={index}
-                onClick={() => setExpandedCard(isExpanded ? null : index)}
-                className={`border-2 ${card.colorClass} p-6 rounded-2xl transition-all duration-200 flex flex-col justify-between cursor-pointer group shadow-sm hover:shadow-md ${
-                  isExpanded ? 'ring-2 ring-amber-400/60 shadow-md' : ''
-                }`}
+              <div
+                key={card.id}
+                className={`bg-white border-2 ${card.borderColor} rounded-xl p-5 shadow-xs flex flex-col justify-between`}
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold ${card.iconBg} shadow-sm group-hover:scale-105 transition-all`}>
+                  <div className="flex items-center justify-between mb-3">
+                    <div className={`w-9 h-9 rounded-lg flex items-center justify-center font-bold ${card.iconBg} shadow-xs`}>
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className={`text-[11px] font-mono font-bold tracking-wider uppercase px-2.5 py-0.5 border rounded-full shadow-2xs ${card.badgeStyle}`}>
-                      {card.badge}
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-stone-600 bg-stone-100 px-2 py-0.5 rounded border border-stone-200">
+                      {isSpanish ? card.tagEs : card.tagEn}
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                    <span className="text-[10px] font-mono text-amber-900 font-bold bg-amber-100/90 px-2 py-0.5 rounded border border-amber-300">
-                      {card.chapter}
-                    </span>
-                    <span className="text-[10px] font-mono text-stone-500 font-bold">
-                      Spec {card.number}
-                    </span>
-                  </div>
-                  
-                  <h3 className="font-cinzel text-lg font-bold text-stone-900 mb-2">
-                    {card.title}
+                  <h3 className="font-cinzel text-base sm:text-lg font-bold text-stone-900 leading-tight">
+                    {isSpanish ? card.titleEs : card.titleEn}
                   </h3>
 
-                  <p className="font-sans font-bold text-stone-900 text-sm leading-snug mb-3">
-                    {card.spec}
-                  </p>
+                  <div className="text-xs sm:text-sm font-bold text-[#1E3A8A] mt-0.5 mb-2.5">
+                    {isSpanish ? card.headlineEs : card.headlineEn}
+                  </div>
 
-                  <p className="font-sans text-stone-700 text-xs leading-relaxed">
-                    {card.detail}
-                  </p>
-
-                  {/* Expandable Pedagogical Detail */}
-                  {isExpanded && (
-                    <div className="mt-4 pt-4 border-t border-stone-200/80 space-y-3 bg-white/95 backdrop-blur-xs -mx-3 -mb-3 p-3.5 rounded-b-xl text-xs animate-in fade-in duration-200 border-t-2">
-                      <div>
-                        <span className="text-[10px] font-mono font-bold uppercase text-stone-900 block">
-                          Educational Value:
-                        </span>
-                        <p className="text-stone-700 text-[11px] mt-0.5 leading-relaxed">
-                          {card.pedagogicalImpact}
-                        </p>
-                      </div>
-
-                      <div>
-                        <span className="text-[10px] font-mono font-bold uppercase text-stone-900 block">
-                          Suggested Student Q&amp;A Prompt:
-                        </span>
-                        <p className="text-stone-700 text-[11px] italic mt-0.5 font-medium">
-                          &ldquo;{card.studentDiscussion}&rdquo;
-                        </p>
-                      </div>
-
-                      <div className="text-[10px] font-sans text-stone-700 bg-stone-50 p-2 rounded-md border border-stone-200">
-                        <strong>Note for Educators:</strong> {card.teacherTip}
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                <div className="mt-5 pt-3 border-t border-stone-200/60 flex items-center justify-between text-[11px] text-stone-500 font-mono">
-                  <span className="font-semibold">Click to {isExpanded ? 'collapse' : 'view teaching notes'}</span>
-                  {isExpanded ? (
-                    <ChevronUp className="w-4 h-4 text-stone-900" />
-                  ) : (
-                    <ChevronDown className="w-4 h-4 text-stone-500 group-hover:text-stone-900" />
-                  )}
+                  <ul className="space-y-1.5 text-xs text-stone-600 font-sans">
+                    {(isSpanish ? card.bulletsEs : card.bulletsEn).map((bullet, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="text-[#9E1B32] font-bold mt-0.5">•</span>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Consolidated Proposal & Next Steps Bar */}
-        <div className="bg-white/95 backdrop-blur-md border-2 border-amber-300 p-6 sm:p-7 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-5 shadow-md">
-          <div className="space-y-1 text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-2">
-              <span className="text-sm font-cinzel font-bold text-stone-900">
-                School Proposal &amp; Procurement Summary
-              </span>
-              <span className="text-[10px] font-mono text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-300 font-bold">
-                EIN: 81-4825762
-              </span>
-            </div>
-            <p className="text-xs font-sans text-stone-600">
-              Teatro for the Soul Inc · 60-Minute Performance &amp; Academic Tertulia · 100% Spanish Immersion.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-2.5 shrink-0">
+        {/* Cohesive Action Banner: Tabs and Copy Memo */}
+        <div className="p-4 sm:p-5 bg-amber-50 border border-amber-300 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex flex-wrap items-center gap-2">
             <button
               type="button"
-              onClick={handleCopySummary}
-              className="btn-gold-accent text-xs py-2.5 px-4 flex items-center gap-2 cursor-pointer font-bold shadow-sm"
+              onClick={() => onNavigateTab('standards')}
+              className="text-xs font-bold text-[#1E3A8A] bg-white border border-blue-300 px-3 py-1.5 rounded-lg hover:bg-blue-50 flex items-center gap-1.5"
             >
-              {copiedMemo ? (
-                <>
-                  <Check className="w-4 h-4 text-emerald-800" />
-                  <span className="text-emerald-900">Summary Copied!</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="w-4 h-4 text-amber-900" />
-                  <span>Copy Proposal Summary</span>
-                </>
-              )}
+              <GraduationCap className="w-3.5 h-3.5" />
+              <span>{isSpanish ? 'Ver Estándares ACTFL' : 'View ACTFL Standards'}</span>
             </button>
 
             <button
               type="button"
-              onClick={() => onNavigateTab('about')}
-              className="btn-outline-refined text-xs py-2.5 px-4 font-bold flex items-center gap-1.5"
+              onClick={() => onNavigateTab('planner')}
+              className="text-xs font-bold text-amber-900 bg-white border border-amber-300 px-3 py-1.5 rounded-lg hover:bg-amber-50 flex items-center gap-1.5"
             >
-              <Users className="w-3.5 h-3.5 text-[#9E1B32]" />
-              <span>Biographies (About Us)</span>
+              <Calculator className="w-3.5 h-3.5" />
+              <span>{isSpanish ? 'Calcular Presupuesto' : 'Budget Calculator'}</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => onNavigateTab('faq')}
+              className="text-xs font-bold text-purple-900 bg-white border border-purple-300 px-3 py-1.5 rounded-lg hover:bg-purple-50 flex items-center gap-1.5"
+            >
+              <HelpCircle className="w-3.5 h-3.5" />
+              <span>{isSpanish ? 'Preguntas Logísticas' : 'Logistics FAQ'}</span>
+            </button>
+          </div>
+
+          <div className="flex items-center gap-2.5">
+            <button
+              type="button"
+              onClick={handleCopySummary}
+              className="text-xs font-bold text-stone-700 bg-white border border-stone-300 px-3 py-1.5 rounded-lg hover:bg-stone-50 flex items-center gap-1.5"
+            >
+              {copiedMemo ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5 text-stone-600" />}
+              <span>{copiedMemo ? (isSpanish ? '¡Copiado!' : 'Copied!') : (isSpanish ? 'Copiar Ficha Resumen' : 'Copy Summary')}</span>
             </button>
 
             <a
               href={zeffyUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary-wine text-xs py-2.5 px-4.5 font-bold flex items-center gap-1.5 shadow-sm"
+              className="btn-primary-wine text-xs font-bold py-1.5 px-3.5 flex items-center gap-1.5 shadow-xs"
             >
               <Ticket className="w-3.5 h-3.5 text-amber-300" />
-              <span>Reserve on Zeffy (Promo: RSVP)</span>
-              <ExternalLink className="w-3 h-3 opacity-90" />
+              <span>{isSpanish ? 'Reservar' : 'Reserve'}</span>
+              <ExternalLink className="w-3 h-3 opacity-80" />
             </a>
           </div>
         </div>
 
       </div>
+
     </section>
   );
 }

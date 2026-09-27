@@ -33,7 +33,7 @@ export default function AssemblyPlannerPage() {
     const text = `MEMORANDUM DE PROPUESTA ESCOLAR / SCHOOL ASSEMBLY PROPOSAL
 Para: Dirección Escolar / Departamento de Lenguas Mundiales (World Languages)
 De: Departamento de Español
-Asunto: Solicitud de Función Teatral Educativa: "Don Quijote en USA"
+Asunto: Solicitud de Función Teatral Educativa: "Don Quijote en USA" (Temporada 2026–2027)
 Compañía Productora: Teatro for the Soul Inc
 Número de Identificación Patronal (EIN): 81-4825762
 Contacto Oficial: ${officialEmail} | www.donquijoteenusa.com
@@ -43,6 +43,7 @@ Contacto Oficial: ${officialEmail} | www.donquijoteenusa.com
 - Intérprete Protagónico: Wilderman García (Actor Colombiano, monólogo teatral unipersonal)
 - Duración Exacta: 60 Minutos (45 minutos de obra + 15 minutos de tertulia académica interactiva en vivo con los estudiantes)
 - Idioma: 100% en Español, adaptado para estudiantes desde nivel principiante hasta avanzado y hablantes nativos.
+- Calendario: Temporada 2026–2027 (Presentaciones a partir de Enero 2027)
 
 2. DETALLES DE LA PROPUESTA:
 - Audiencia estimada: ${studentCount} estudiantes (${gradeLevel.toUpperCase()})
@@ -87,12 +88,13 @@ Contacto Oficial: ${officialEmail} | www.donquijoteenusa.com
             <span>Administrator &amp; Department Chair Tool</span>
           </div>
           
-          <h1 className="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight">
-            School Assembly &amp; Tour Date Planner
+          <h1 className="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+            <span className="text-[#1E3A8A]">Planificador de Asambleas </span>
+            <span className="text-[#B91C1C]">&amp; Gira 2026–2027</span>
           </h1>
           
           <p className="font-garamond text-lg sm:text-xl text-stone-700 mt-3 italic max-w-2xl mx-auto">
-            Configure your student population, grade level, and venue to generate an instant technical plan and formal administrative approval memo.
+            Estamos en el <strong>2026</strong>: configure la audiencia de su escuela para reservar funciones a partir de <strong>Enero 2027</strong> y generar la propuesta formal de aprobación para la dirección escolar.
           </p>
         </div>
 

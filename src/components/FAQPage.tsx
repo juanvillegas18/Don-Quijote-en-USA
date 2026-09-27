@@ -129,12 +129,13 @@ export default function FAQPage() {
             <span>School Logistics &amp; Administration</span>
           </div>
           
-          <h1 className="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight">
-            Frequently Asked Questions
+          <h1 className="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+            <span className="text-[#1E3A8A]">Preguntas Frecuentes </span>
+            <span className="text-[#B91C1C]">&amp; Logística Escolar</span>
           </h1>
           
           <p className="font-garamond text-lg sm:text-xl text-stone-700 mt-3 italic max-w-2xl mx-auto">
-            Practical guidance on staging, bell schedules, district procurement, purchase orders, and student language immersion.
+            Guía práctica para directores y docentes sobre montaje, horarios, órdenes de compra y reservas para la gira 2026–2027 (funciones a partir de Enero 2027).
           </p>
         </div>
 

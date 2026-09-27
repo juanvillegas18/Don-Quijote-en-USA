@@ -125,12 +125,13 @@ Language: 100% Spanish Immersion (K–16)
             <span>Academic Justification &amp; Standards</span>
           </div>
           
-          <h1 className="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight">
-            Curriculum &amp; Educational Standards
+          <h1 className="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+            <span className="text-[#1E3A8A]">Alineación Curricular </span>
+            <span className="text-[#B91C1C]">&amp; Estándares ACTFL / AP</span>
           </h1>
           
           <p className="font-garamond text-lg sm:text-xl text-stone-700 mt-3 italic max-w-2xl mx-auto">
-            Grounded in the ACTFL World-Readiness Standards and College Board AP Spanish Literature themes for K–12 and higher education.
+            Fundamentada en los 5 Cs de ACTFL y en el programa de AP Spanish Literature para la temporada 2026–2027 (funciones a partir de Enero 2027).
           </p>
         </div>
 
