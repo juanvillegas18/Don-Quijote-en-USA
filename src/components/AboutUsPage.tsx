@@ -23,10 +23,50 @@ import {
 import quijoteOverviewBg from '../assets/images/quijote_overview_minimalist_bg_1790503674706.jpg';
 import { useLanguage } from '../context/LanguageContext';
 
+export const WILDERMAN_OFFICIAL_PHOTO = {
+  src: 'https://i.postimg.cc/4sYJXRq5/IMG-0656.png',
+  captionEs: 'Wilderman García encarnando a Don Quijote en Don Quijote en USA',
+  captionEn: 'Wilderman García embodying Don Quixote in Don Quixote in USA',
+};
+
+export const GABRIEL_PHOTOS = [
+  {
+    id: 'img-0805',
+    name: 'IMG-0805 (Oficial)',
+    src: 'https://i.postimg.cc/R0kZ1Gbw/IMG-0805.png',
+    fallbackSrc: 'https://i.postimg.cc/r8mRkP1Z/IMG-0805.png',
+  },
+  {
+    id: 'img-0774',
+    name: 'IMG-0774',
+    src: 'https://i.postimg.cc/bv7w0LFn/IMG-0774.jpg',
+    fallbackSrc: 'https://i.postimg.cc/fwLSNrc8/IMG-0774.jpg',
+  },
+  {
+    id: 'img-0799',
+    name: 'IMG-0799',
+    src: 'https://i.postimg.cc/zfsGwpPn/IMG-0799.png',
+    fallbackSrc: 'https://i.postimg.cc/2z6LDKQX/IMG-0799.png',
+  },
+  {
+    id: 'img-0505',
+    name: 'IMG-0505',
+    src: 'https://i.postimg.cc/Jhfz3Kd3/IMG-0505.png',
+    fallbackSrc: 'https://i.postimg.cc/vQBxsNrK/IMG-0505.png',
+  },
+  {
+    id: 'img-3476',
+    name: 'IMG-3476',
+    src: 'https://i.postimg.cc/XvRYKxDf/IMG-3476.jpg',
+    fallbackSrc: 'https://i.postimg.cc/SysYhv6v/IMG-3476.jpg',
+  },
+];
+
 export default function AboutUsPage() {
   const zeffyUrl = "https://www.zeffy.com/en-US/ticketing/don-quijote-en-usa";
   const officialEmail = "teatroforthesoul@gmail.com";
   const { language: lang, setLanguage, toggleLanguage, isSpanish } = useLanguage();
+  const [selectedGabrielPhoto, setSelectedGabrielPhoto] = React.useState(0);
 
   return (
     <div className="pt-28 pb-20 sm:pt-36 sm:pb-28 bg-[#FCF9F2] min-h-screen relative overflow-hidden">
@@ -114,9 +154,9 @@ export default function AboutUsPage() {
                 <div className="flex items-start sm:items-center gap-4">
                   <div className="relative shrink-0 group">
                     <img 
-                      src="https://i.postimg.cc/38SSnVKm/IMG-0937.jpg" 
-                      alt="Wilderman García caracterizado como Don Quijote" 
-                      className="w-18 h-18 sm:w-22 sm:h-22 rounded-2xl object-cover shadow-lg border-2 border-amber-400 ring-4 ring-[#9E1B32]/30 group-hover:scale-105 transition-transform duration-300"
+                      src={WILDERMAN_OFFICIAL_PHOTO.src} 
+                      alt="Wilderman García - Don Quijote en USA" 
+                      className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover shadow-lg border-2 border-amber-400 ring-4 ring-[#9E1B32]/30"
                     />
                     <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 text-stone-900 flex items-center justify-center shadow-md border border-white">
                       <Sparkles className="w-3.5 h-3.5 text-stone-900" />
@@ -135,6 +175,9 @@ export default function AboutUsPage() {
                     <h2 className="font-cinzel text-2xl sm:text-3xl font-bold text-stone-900">
                       Wilderman García
                     </h2>
+                    <div className="text-[11px] font-sans text-stone-500 mt-0.5">
+                      {isSpanish ? WILDERMAN_OFFICIAL_PHOTO.captionEs : WILDERMAN_OFFICIAL_PHOTO.captionEn}
+                    </div>
                   </div>
                 </div>
 
@@ -170,85 +213,6 @@ export default function AboutUsPage() {
                 )}
               </div>
 
-              {/* Live Performance Photos Strip */}
-              <div className="pt-4 border-t border-amber-200">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[11px] font-mono uppercase text-[#9E1B32] font-bold block">
-                    {lang === 'en' ? 'Live Stage Performances · Don Quijote en USA' : 'Escenas en Vivo · Don Quijote en USA'}
-                  </span>
-                  <a href="#galeria-teatral" className="text-[10px] font-mono text-[#1E3A8A] font-semibold hover:underline">
-                    {lang === 'en' ? 'Explore full gallery (12)' : 'Ver galería completa (12)'} &rarr;
-                  </a>
-                </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
-                  <div className="rounded-xl overflow-hidden border border-amber-300 shadow-xs group bg-stone-900 relative aspect-square">
-                    <img 
-                      src="https://i.postimg.cc/pVQgkk69/IMG-0942.jpg" 
-                      alt="Wilderman García - Don Quijote en Escena" 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300 filter brightness-95 group-hover:brightness-105"
-                    />
-                    <div className="absolute bottom-1 inset-x-1 bg-black/80 backdrop-blur-xs text-[9px] font-mono text-amber-300 px-1 py-0.5 rounded text-center font-bold truncate">
-                      {lang === 'en' ? 'On Stage' : 'En Escena'}
-                    </div>
-                  </div>
-
-                  <div className="rounded-xl overflow-hidden border border-rose-300 shadow-xs group bg-stone-900 relative aspect-square">
-                    <img 
-                      src="https://i.postimg.cc/nFRR0gHk/IMG-0851.jpg" 
-                      alt="Wilderman García - Comedia gestual en vivo" 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300 filter brightness-95 group-hover:brightness-105"
-                    />
-                    <div className="absolute bottom-1 inset-x-1 bg-black/80 backdrop-blur-xs text-[9px] font-mono text-rose-300 px-1 py-0.5 rounded text-center font-bold truncate">
-                      Comedia Gestual
-                    </div>
-                  </div>
-
-                  <div className="rounded-xl overflow-hidden border border-blue-300 shadow-xs group bg-stone-900 relative aspect-square">
-                    <img 
-                      src="https://i.postimg.cc/rVnnQ38j/IMG-0911.jpg" 
-                      alt="Wilderman García - Momento dramático" 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300 filter brightness-95 group-hover:brightness-105"
-                    />
-                    <div className="absolute bottom-1 inset-x-1 bg-black/80 backdrop-blur-xs text-[9px] font-mono text-blue-300 px-1 py-0.5 rounded text-center font-bold truncate">
-                      Fuerza Poética
-                    </div>
-                  </div>
-
-                  <div className="rounded-xl overflow-hidden border border-amber-300 shadow-xs group bg-stone-900 relative aspect-square">
-                    <img 
-                      src="https://i.postimg.cc/RvHkqSM9/IMG-0784.jpg" 
-                      alt="Wilderman García - Mímica quijotesca" 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300 filter brightness-95 group-hover:brightness-105"
-                    />
-                    <div className="absolute bottom-1 inset-x-1 bg-black/80 backdrop-blur-xs text-[9px] font-mono text-amber-300 px-1 py-0.5 rounded text-center font-bold truncate">
-                      Mímica Clásica
-                    </div>
-                  </div>
-
-                  <div className="rounded-xl overflow-hidden border border-red-300 shadow-xs group bg-stone-900 relative aspect-square">
-                    <img 
-                      src="https://i.postimg.cc/3KQPvsRH/IMG-0790.jpg" 
-                      alt="Wilderman García - Pasión escénica" 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300 filter brightness-95 group-hover:brightness-105"
-                    />
-                    <div className="absolute bottom-1 inset-x-1 bg-black/80 backdrop-blur-xs text-[9px] font-mono text-red-300 px-1 py-0.5 rounded text-center font-bold truncate">
-                      Pasión Teatral
-                    </div>
-                  </div>
-
-                  <div className="rounded-xl overflow-hidden border border-teal-300 shadow-xs group bg-stone-900 relative aspect-square">
-                    <img 
-                      src="https://i.postimg.cc/TRRvS86G/IMG-1826.jpg" 
-                      alt="Tertulia académica con estudiantes" 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300 filter brightness-95 group-hover:brightness-105"
-                    />
-                    <div className="absolute bottom-1 inset-x-1 bg-black/80 backdrop-blur-xs text-[9px] font-mono text-teal-300 px-1 py-0.5 rounded text-center font-bold truncate">
-                      Tertulia Escolar
-                    </div>
-                  </div>
-                </div>
-              </div>
-
             </div>
           </div>
 
@@ -261,8 +225,22 @@ export default function AboutUsPage() {
               
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-amber-200 pb-5">
                 <div className="flex items-start sm:items-center gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#1E40AF] via-[#2563EB] to-[#4F46E5] text-white flex items-center justify-center font-cinzel font-bold text-2xl shadow-md shrink-0 ring-2 ring-blue-400">
-                    GV
+                  <div className="relative shrink-0 group">
+                    <img 
+                      src={GABRIEL_PHOTOS[selectedGabrielPhoto].src} 
+                      alt="Gabriel Villegas - Dramaturgo y Fundador" 
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        if (!target.dataset.triedFallback) {
+                          target.dataset.triedFallback = 'true';
+                          target.src = GABRIEL_PHOTOS[selectedGabrielPhoto].fallbackSrc;
+                        }
+                      }}
+                      className="w-18 h-18 sm:w-22 sm:h-22 rounded-2xl object-cover shadow-lg border-2 border-blue-400 ring-4 ring-[#1E40AF]/30 group-hover:scale-105 transition-transform duration-300 bg-stone-900"
+                    />
+                    <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-indigo-700 text-white flex items-center justify-center shadow-md border border-white">
+                      <Feather className="w-3.5 h-3.5 text-amber-300" />
+                    </div>
                   </div>
                   <div>
                     <div className="flex flex-wrap items-center gap-2 mb-1">
@@ -310,6 +288,35 @@ export default function AboutUsPage() {
                     </p>
                   </>
                 )}
+              </div>
+
+              {/* Photo Selector for Gabriel Villegas */}
+              <div className="pt-3 border-t border-amber-200">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[10px] font-mono uppercase text-[#1E3A8A] font-bold">
+                    {lang === 'en' ? 'Portrait Selection · Gabriel Villegas' : 'Selección de Retrato · Gabriel Villegas'}
+                  </span>
+                  <span className="text-[10px] font-mono text-stone-500">
+                    {lang === 'en' ? 'Selected: ' + GABRIEL_PHOTOS[selectedGabrielPhoto].name : 'Elegida: ' + GABRIEL_PHOTOS[selectedGabrielPhoto].name}
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {GABRIEL_PHOTOS.map((photo, idx) => (
+                    <button
+                      key={photo.id}
+                      type="button"
+                      onClick={() => setSelectedGabrielPhoto(idx)}
+                      className={`text-xs font-mono py-1 px-2.5 rounded-lg border transition-all cursor-pointer flex items-center gap-1.5 ${
+                        selectedGabrielPhoto === idx
+                          ? 'bg-[#1E40AF] text-white border-blue-900 font-bold shadow-xs'
+                          : 'bg-white text-stone-700 border-amber-300 hover:bg-blue-50'
+                      }`}
+                    >
+                      <span className={`w-1.5 h-1.5 rounded-full ${selectedGabrielPhoto === idx ? 'bg-amber-300' : 'bg-stone-300'}`}></span>
+                      <span>{photo.name}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
 
             </div>

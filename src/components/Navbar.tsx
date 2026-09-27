@@ -11,19 +11,22 @@ import {
   HelpCircle, 
   Calculator, 
   Mail, 
-  Sparkles,
-  Shield,
-  Menu,
-  X,
-  Compass,
-  Send,
-  Users,
-  Languages,
-  Globe
+  Sparkles, 
+  Shield, 
+  Menu, 
+  X, 
+  Compass, 
+  Send, 
+  Users, 
+  Languages, 
+  Globe, 
+  Briefcase, 
+  Newspaper,
+  MapPin
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-export type ActiveTab = 'home' | 'about' | 'standards' | 'planner' | 'faq' | 'email-generator' | 'contact';
+export type ActiveTab = 'home' | 'about' | 'tour' | 'business' | 'press' | 'standards' | 'planner' | 'faq' | 'email-generator' | 'contact';
 
 interface NavbarProps {
   activeTab: ActiveTab;
@@ -78,7 +81,7 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
                 Don Quijote en USA
               </span>
               <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-sans font-bold bg-amber-100 text-amber-900 border border-amber-300 uppercase tracking-wider">
-                Teatro Cervantino
+                Teatro Educativo
               </span>
             </div>
             <span className="text-[10px] font-sans font-semibold text-[#9E1B32] tracking-wider uppercase flex items-center gap-1.5">
@@ -113,6 +116,45 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
           >
             <Users className="w-3.5 h-3.5" />
             <span>{isSpanish ? 'Nosotros' : 'About Us'}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => handleNavClick('tour')}
+            className={`text-xs font-bold py-1.5 px-3 rounded-lg transition-all cursor-pointer flex items-center gap-1.5 ${
+              activeTab === 'tour'
+                ? 'bg-gradient-to-r from-red-700 to-amber-700 text-white shadow-xs'
+                : 'text-stone-700 hover:text-[#9E1B32] hover:bg-white/60'
+            }`}
+          >
+            <MapPin className="w-3.5 h-3.5 text-rose-500" />
+            <span>{isSpanish ? 'Mapa de Gira (+30 Escuelas)' : 'Tour Map (+30 Schools)'}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => handleNavClick('business')}
+            className={`text-xs font-bold py-1.5 px-3 rounded-lg transition-all cursor-pointer flex items-center gap-1.5 ${
+              activeTab === 'business'
+                ? 'bg-gradient-to-r from-amber-700 via-amber-800 to-stone-900 text-white shadow-xs'
+                : 'text-stone-700 hover:text-amber-800 hover:bg-white/60'
+            }`}
+          >
+            <Briefcase className="w-3.5 h-3.5 text-amber-500" />
+            <span>Don Quijote en USA for Business</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => handleNavClick('press')}
+            className={`text-xs font-bold py-1.5 px-3 rounded-lg transition-all cursor-pointer flex items-center gap-1.5 ${
+              activeTab === 'press'
+                ? 'bg-gradient-to-r from-rose-700 via-red-800 to-stone-900 text-white shadow-xs'
+                : 'text-stone-700 hover:text-[#9E1B32] hover:bg-white/60'
+            }`}
+          >
+            <Newspaper className="w-3.5 h-3.5 text-amber-400" />
+            <span>{isSpanish ? 'Prensa' : 'Press'}</span>
           </button>
 
           <button
@@ -262,6 +304,39 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
           >
             <Users className="w-4 h-4" />
             <span>{isSpanish ? 'Sobre Nosotros (Biografías)' : 'About Us (Biographies)'}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => handleNavClick('tour')}
+            className={`w-full text-left py-2.5 px-3.5 rounded-lg text-xs font-bold flex items-center gap-2 ${
+              activeTab === 'tour' ? 'bg-[#9E1B32] text-white' : 'text-stone-700 hover:bg-stone-100'
+            }`}
+          >
+            <MapPin className="w-4 h-4 text-amber-300" />
+            <span>{isSpanish ? 'Mapa de la Gira (+30 Escuelas · 6 Estados)' : 'Tour Map (30+ Schools · 6 States)'}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => handleNavClick('business')}
+            className={`w-full text-left py-2.5 px-3.5 rounded-lg text-xs font-bold flex items-center gap-2 ${
+              activeTab === 'business' ? 'bg-amber-800 text-white' : 'text-stone-700 hover:bg-stone-100'
+            }`}
+          >
+            <Briefcase className="w-4 h-4" />
+            <span>{isSpanish ? 'Don Quijote en USA for Business' : 'Don Quijote en USA for Business'}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => handleNavClick('press')}
+            className={`w-full text-left py-2.5 px-3.5 rounded-lg text-xs font-bold flex items-center gap-2 ${
+              activeTab === 'press' ? 'bg-[#9E1B32] text-white' : 'text-stone-700 hover:bg-stone-100'
+            }`}
+          >
+            <Newspaper className="w-4 h-4" />
+            <span>{isSpanish ? 'Prensa & Medios' : 'Press & Media'}</span>
           </button>
 
           <button

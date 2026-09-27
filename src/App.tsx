@@ -16,6 +16,9 @@ import CurriculumPage from './components/CurriculumPage';
 import AssemblyPlannerPage from './components/AssemblyPlannerPage';
 import TeacherEmailGeneratorPage from './components/TeacherEmailGeneratorPage';
 import AboutUsPage from './components/AboutUsPage';
+import CorporateTheatrePage from './components/CorporateTheatrePage';
+import PressCoveragePage from './components/PressCoveragePage';
+import TourMapPage from './components/TourMapPage';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('home');
@@ -48,6 +51,21 @@ export default function App() {
           {/* TAB 2: ABOUT US (BIOGRAPHIES) */}
           {activeTab === 'about' && (
             <AboutUsPage />
+          )}
+
+          {/* TAB 2-TOUR: NATIONAL TOUR MAP (+30 SCHOOLS · 6 STATES) */}
+          {activeTab === 'tour' && (
+            <TourMapPage onNavigateTab={handleNavigateTab} />
+          )}
+
+          {/* TAB 2B: DON QUIJOTE EN USA FOR BUSINESS (CORPORATE THEATRE) */}
+          {activeTab === 'business' && (
+            <CorporateTheatrePage />
+          )}
+
+          {/* TAB 2C: PRESS COVERAGE (EL NUEVO DIA & VIDEOS) */}
+          {activeTab === 'press' && (
+            <PressCoveragePage />
           )}
 
           {/* TAB 3: STANDARDS & AP CURRICULUM */}

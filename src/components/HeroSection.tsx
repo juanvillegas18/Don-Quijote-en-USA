@@ -16,7 +16,8 @@ import {
   Calculator, 
   Send, 
   Calendar, 
-  Sparkles
+  Sparkles,
+  MapPin
 } from 'lucide-react';
 import quijoteHeroBg from '../assets/images/quijote_hero_minimalist_bg_1790503664740.jpg';
 import quijoteMedievalBanner from '../assets/images/quijote_medieval_banner_1790532277323.jpg';
@@ -58,6 +59,16 @@ export default function HeroSection({ onNavigateTab }: HeroSectionProps) {
             <Feather className="w-3.5 h-3.5 text-amber-300" />
             <span>{isSpanish ? 'Gira Nacional 2026–2027' : 'National Tour 2026–2027'}</span>
           </span>
+
+          <button
+            type="button"
+            onClick={() => onNavigateTab('tour')}
+            className="flex items-center gap-1.5 bg-rose-100 hover:bg-rose-200 text-rose-950 border border-rose-300 px-3 py-1 rounded-full font-serif font-bold transition-colors cursor-pointer shadow-2xs"
+          >
+            <MapPin className="w-3.5 h-3.5 text-[#9E1B32]" />
+            <span>{isSpanish ? 'Gira: +30 Escuelas · 6 Estados' : 'Tour: 30+ Schools · 6 States'}</span>
+          </button>
+
           <span className="flex items-center gap-1.5 bg-amber-100 text-amber-950 border border-amber-300 px-3 py-1 rounded-full font-serif font-bold">
             <Calendar className="w-3.5 h-3.5 text-[#B91C1C]" />
             <span>{isSpanish ? 'Funciones desde Enero 2027' : 'Shows Starting January 2027'}</span>
@@ -189,8 +200,11 @@ export default function HeroSection({ onNavigateTab }: HeroSectionProps) {
           </div>
 
           {/* RIGHT COLUMN: The ONLY Official Flyer Location (5 cols) */}
-          <div className="lg:col-span-5 space-y-3">
-            <div className="relative rounded-2xl overflow-hidden border-3 border-amber-400/90 shadow-2xl bg-[#1C1917] p-2 group">
+          <div className="lg:col-span-5 space-y-3 relative">
+            {/* Magical golden ambient glow behind the artwork */}
+            <div className="absolute -inset-3 bg-gradient-to-tr from-amber-500/25 via-rose-500/20 to-amber-300/30 rounded-3xl blur-2xl -z-10 pointer-events-none animate-magic-glow" />
+
+            <div className="relative rounded-2xl overflow-hidden border-2 border-amber-400/90 magic-gold-aura bg-[#1C1917] p-2 group transition-all duration-500 hover:border-amber-300">
               
               <a 
                 href="https://postimg.cc/XrF9vqpV" 
@@ -219,33 +233,35 @@ export default function HeroSection({ onNavigateTab }: HeroSectionProps) {
 
                 {/* Top Badges */}
                 <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10 pointer-events-none">
-                  <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider bg-black/75 backdrop-blur-xs text-amber-300 px-3 py-1 rounded-full border border-amber-400/60 shadow-md">
+                  <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider bg-black/80 backdrop-blur-xs text-amber-300 px-3 py-1 rounded-full border border-amber-400/70 shadow-lg">
                     <Sparkles className="w-3 h-3 text-amber-400" />
-                    <span>{isSpanish ? 'Flyer Oficial' : 'Official Flyer'}</span>
+                    <span>{isSpanish ? 'Dramaturgia Clásica' : 'Classical Staging'}</span>
                   </span>
 
-                  <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold bg-[#9E1B32]/90 text-white px-2.5 py-1 rounded-full border border-amber-300/50 shadow-md">
-                    <span>IMG-0941</span>
+                  <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold bg-[#9E1B32]/95 text-white px-2.5 py-1 rounded-full border border-amber-300/50 shadow-lg">
+                    <span>{isSpanish ? 'Temporada Académica' : 'Academic Season'}</span>
                     <ExternalLink className="w-2.5 h-2.5" />
                   </span>
                 </div>
 
-                {/* Caption */}
+                {/* Caption correlated with image */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-white z-10">
                   <div className="flex items-center justify-between text-xs font-mono text-amber-300 mb-0.5">
                     <span>Wilderman García</span>
                     <span className="text-[10px] bg-amber-400/20 px-2 py-0.5 rounded border border-amber-300/40 font-bold">
-                      Temporada 2026–2027
+                      {isSpanish ? 'Artes Escénicas y Siglo de Oro' : 'Performing Arts & Golden Age'}
                     </span>
                   </div>
                   <h3 className="font-cinzel text-base sm:text-lg font-bold text-white flex items-center justify-between">
-                    <span>{isSpanish ? 'Cartel Oficial de Gira' : 'Official Tour Poster'}</span>
+                    <span>{isSpanish ? 'Iconografía y Caracterización Cervantina' : 'Cervantine Iconography & Theatrical Characterization'}</span>
                     <span className="text-xs font-sans font-normal text-amber-300 underline group-hover:text-white flex items-center gap-1">
                       PostImg HD &rarr;
                     </span>
                   </h3>
                   <p className="font-sans text-xs text-stone-300 mt-0.5">
-                    Teatro for the Soul Inc · Non-Profit 501(c)(3)
+                    {isSpanish
+                      ? 'Monólogo teatral unipersonal, prosodia literaria y coloquio pedagógico en español · Teatro for the Soul Inc'
+                      : 'Live classical solo performance, target-language prosody & educational symposium · Teatro for the Soul Inc'}
                   </p>
                 </div>
               </a>

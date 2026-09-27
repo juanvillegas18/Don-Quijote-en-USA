@@ -5,17 +5,17 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { 
+  Camera, 
   Sparkles, 
-  Drama, 
   Maximize2, 
   X, 
   ChevronLeft, 
   ChevronRight, 
   ExternalLink,
-  Ticket,
-  Camera,
+  BookOpen,
+  Compass,
   MessageSquare,
-  UserCheck
+  Users
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -24,7 +24,6 @@ export interface GalleryPhoto {
   src: string;
   fallbackSrc: string;
   externalLink: string;
-  category: 'stage' | 'talk';
   titleEs: string;
   titleEn: string;
   descEs: string;
@@ -35,190 +34,49 @@ export interface GalleryPhoto {
 
 export const STAGE_PHOTOS: GalleryPhoto[] = [
   {
-    id: 'img-0942',
-    src: 'https://i.postimg.cc/pVQgkk69/IMG-0942.jpg',
-    fallbackSrc: 'https://i.postimg.cc/yK2s1bhT/IMG-0942.jpg',
-    externalLink: 'https://postimg.cc/yK2s1bhT',
-    category: 'stage',
-    titleEs: 'Don Quijote en el Escenario',
-    titleEn: 'Don Quixote on Stage',
-    descEs: 'Wilderman García en plena caracterización teatral del hidalgo manchego.',
-    descEn: 'Wilderman García in full dramatic portrayal of the man from La Mancha.',
-    tagEs: 'En Escena',
-    tagEn: 'On Stage'
-  },
-  {
     id: 'img-0943',
-    src: 'https://i.postimg.cc/zDw9ppcy/IMG-0943.jpg',
-    fallbackSrc: 'https://i.postimg.cc/QDvh8ygJ/IMG-0943.jpg',
+    src: 'https://i.postimg.cc/QDvh8ygJ/IMG-0943.jpg',
+    fallbackSrc: 'https://i.postimg.cc/zDw9ppcy/IMG-0943.jpg',
     externalLink: 'https://postimg.cc/QDvh8ygJ',
-    category: 'stage',
-    titleEs: 'Gesto y Carácter Cervantino',
-    titleEn: 'Cervantine Gesture & Character',
-    descEs: 'Expresión corporal y energía escénica que cautiva a los alumnos.',
-    descEn: 'Physical expression and stage energy that captivates students.',
-    tagEs: 'Expresión',
-    tagEn: 'Expression'
+    titleEs: 'La Caracterización de Don Quijote',
+    titleEn: 'Characterization of Don Quixote',
+    descEs: 'Wilderman García encarna al personaje con profundidad actoral, uniendo la expresividad gestual con la nobleza de los ideales clásicos.',
+    descEn: 'Wilderman García portrays the iconic protagonist with depth and skill, uniting physical comedy with the nobility of classic ideals.',
+    tagEs: 'El Personaje',
+    tagEn: 'The Solo Portrayal'
   },
   {
     id: 'img-0945',
-    src: 'https://i.postimg.cc/h48HMM5Q/IMG-0945.jpg',
-    fallbackSrc: 'https://i.postimg.cc/0vhPkBGn/IMG-0945.jpg',
+    src: 'https://i.postimg.cc/0vhPkBGn/IMG-0945.jpg',
+    fallbackSrc: 'https://i.postimg.cc/h48HMM5Q/IMG-0945.jpg',
     externalLink: 'https://postimg.cc/0vhPkBGn',
-    category: 'stage',
-    titleEs: 'La Lanza y la Imaginación',
-    titleEn: 'The Lance & The Imagination',
-    descEs: 'El caballero desafía a los gigantes en el auditorio escolar.',
-    descEn: 'The knight confronts imaginary giants in the school auditorium.',
-    tagEs: 'Acción',
-    tagEn: 'Action'
-  },
-  {
-    id: 'img-0946',
-    src: 'https://i.postimg.cc/RC1jGGDn/IMG-0946.jpg',
-    fallbackSrc: 'https://i.postimg.cc/4GjsfSvw/IMG-0946.jpg',
-    externalLink: 'https://postimg.cc/4GjsfSvw',
-    category: 'stage',
-    titleEs: 'Comedia y Complicidad',
-    titleEn: 'Comedy & Direct Rapport',
-    descEs: 'Humor accesible que conecta con estudiantes de todos los niveles.',
-    descEn: 'Accessible humor that connects with students across all levels.',
-    tagEs: 'Comedia',
-    tagEn: 'Comedy'
-  },
-  {
-    id: 'img-0947',
-    src: 'https://i.postimg.cc/h48HMM5z/IMG-0947.jpg',
-    fallbackSrc: 'https://i.postimg.cc/QDvh8ygb/IMG-0947.jpg',
-    externalLink: 'https://postimg.cc/QDvh8ygb',
-    category: 'stage',
-    titleEs: 'Reflexión y Filosofía',
-    titleEn: 'Reflection & Insight',
-    descEs: 'La sabiduría cervantina explicada con sencillez y emoción.',
-    descEn: 'Cervantine wisdom shared with clarity, warmth, and emotion.',
-    tagEs: 'Drama',
-    tagEn: 'Drama'
-  },
-  {
-    id: 'img-0948',
-    src: 'https://i.postimg.cc/tRdLDDM7/IMG-0948.jpg',
-    fallbackSrc: 'https://i.postimg.cc/0vhPkBGG/IMG-0948.jpg',
-    externalLink: 'https://postimg.cc/0vhPkBGG',
-    category: 'stage',
-    titleEs: 'Dominio de la Voz y el Texto',
-    titleEn: 'Voice & Classical Text',
-    descEs: 'Español claro y dicción impecable para aprendices y nativos.',
-    descEn: 'Clear Spanish and impeccable diction for learners and native speakers.',
-    tagEs: 'Voz y Dicción',
-    tagEn: 'Voice & Diction'
-  },
-  {
-    id: 'img-0949',
-    src: 'https://i.postimg.cc/bY0KLLBr/IMG-0949.jpg',
-    fallbackSrc: 'https://i.postimg.cc/S4HkSvL6/IMG-0949.jpg',
-    externalLink: 'https://postimg.cc/S4HkSvL6',
-    category: 'stage',
-    titleEs: 'Intensidad Dramática',
-    titleEn: 'Dramatic Intensity',
-    descEs: 'Momentos teatrales que despiertan el interés por la literatura.',
-    descEn: 'Theatrical moments that awaken genuine interest in Hispanic literature.',
+    titleEs: 'Puesta en Escena en el Auditorio',
+    titleEn: 'Theatrical Staging in the Auditorium',
+    descEs: 'Representación en vivo de 45 minutos diseñada para conectar con los estudiantes mediante el humor, el dinamismo y la emoción literaria.',
+    descEn: 'A brisk 45-minute live performance designed to engage students through dynamic staging, humor, and literary emotion.',
     tagEs: 'En Escena',
     tagEn: 'On Stage'
-  },
-  {
-    id: 'img-0950',
-    src: 'https://i.postimg.cc/FFb2GGBR/IMG-0950.jpg',
-    fallbackSrc: 'https://i.postimg.cc/NtZBsz81/IMG-0950.jpg',
-    externalLink: 'https://postimg.cc/NtZBsz81',
-    category: 'stage',
-    titleEs: 'La Pasión por la Aventura',
-    titleEn: 'The Passion for Adventure',
-    descEs: 'Ritmo dinámico durante los 45 minutos de función continua.',
-    descEn: 'Brisk, engaging rhythm throughout the 45-minute continuous play.',
-    tagEs: 'Ritmo Escénico',
-    tagEn: 'Stage Pace'
-  },
-  {
-    id: 'img-0951',
-    src: 'https://i.postimg.cc/HW0f33hV/IMG-0951.jpg',
-    fallbackSrc: 'https://i.postimg.cc/WVxTNHm6/IMG-0951.jpg',
-    externalLink: 'https://postimg.cc/WVxTNHm6',
-    category: 'stage',
-    titleEs: 'Cierre Triunfal y Ovación',
-    titleEn: 'Triumphant Finale',
-    descEs: 'El saludo final que da paso a la conversación con los alumnos.',
-    descEn: 'The final bow leading straight into the student interactive dialogue.',
-    tagEs: 'Final de Obra',
-    tagEn: 'Finale'
-  },
-  {
-    id: 'img-0851',
-    src: 'https://i.postimg.cc/nFRR0gHk/IMG-0851.jpg',
-    fallbackSrc: 'https://i.postimg.cc/nFRR0gHk/IMG-0851.jpg',
-    externalLink: 'https://postimg.cc/nFRR0gHk',
-    category: 'stage',
-    titleEs: 'Comedia Gestual en Vivo',
-    titleEn: 'Live Physical Comedy',
-    descEs: 'Wilderman interactúa directamente con el público estudiantil.',
-    descEn: 'Wilderman interacts directly with the student audience in the room.',
-    tagEs: 'Interacción',
-    tagEn: 'Interaction'
-  },
-  {
-    id: 'img-0911',
-    src: 'https://i.postimg.cc/rVnnQ38j/IMG-0911.jpg',
-    fallbackSrc: 'https://i.postimg.cc/rVnnQ38j/IMG-0911.jpg',
-    externalLink: 'https://postimg.cc/rVnnQ38j',
-    category: 'stage',
-    titleEs: 'Fuerza Poética y Clásica',
-    titleEn: 'Classical Poetic Power',
-    descEs: 'El valor de soñar y luchar por nobles ideales en el mundo de hoy.',
-    descEn: 'The courage to dream and fight for noble ideals in today’s world.',
-    tagEs: 'Poética',
-    tagEn: 'Poetry'
   },
   {
     id: 'img-1826',
     src: 'https://i.postimg.cc/TRRvS86G/IMG-1826.jpg',
     fallbackSrc: 'https://i.postimg.cc/TRRvS86G/IMG-1826.jpg',
     externalLink: 'https://postimg.cc/TRRvS86G',
-    category: 'talk',
-    titleEs: 'Tertulia: Preguntas de Estudiantes',
-    titleEn: 'Student Q&A: In Spanish',
-    descEs: '15 minutos de conversatorio donde los alumnos practican su español.',
-    descEn: '15 minutes of live Q&A where students practice their Spanish directly.',
-    tagEs: 'Tertulia Escolar',
-    tagEn: 'Student Q&A'
-  },
-  {
-    id: 'img-1831',
-    src: 'https://i.postimg.cc/08813gsP/IMG-1831.jpg',
-    fallbackSrc: 'https://i.postimg.cc/08813gsP/IMG-1831.jpg',
-    externalLink: 'https://postimg.cc/08813gsP',
-    category: 'talk',
-    titleEs: 'Diálogo Pedagógico Directo',
-    titleEn: 'Educational Dialogue',
-    descEs: 'Conexión cultural y lingüística alineada con estándares ACTFL.',
-    descEn: 'Cultural and linguistic connection aligned with ACTFL national standards.',
-    tagEs: 'Pedagogía',
-    tagEn: 'Education'
+    titleEs: 'Tertulia y Diálogo con Estudiantes',
+    titleEn: 'Student Dialogue & Post-Show Talkback',
+    descEs: '15 minutos de conversatorio interactivo en español donde los alumnos hacen preguntas al actor y debaten los temas de la obra.',
+    descEn: '15 minutes of interactive Spanish Q&A where students converse directly with the actor and reflect on the story’s themes.',
+    tagEs: 'Con los Estudiantes',
+    tagEn: 'With Students'
   }
 ];
 
 export default function StageGallerySection() {
   const { isSpanish } = useLanguage();
-  const [selectedFilter, setSelectedFilter] = useState<'all' | 'stage' | 'talk'>('all');
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
 
-  const filteredPhotos = STAGE_PHOTOS.filter(p => {
-    if (selectedFilter === 'all') return true;
-    return p.category === selectedFilter;
-  });
-
-  const openLightbox = (indexInFiltered: number) => {
-    const photo = filteredPhotos[indexInFiltered];
-    const originalIndex = STAGE_PHOTOS.findIndex(p => p.id === photo.id);
-    setSelectedPhotoIndex(originalIndex !== -1 ? originalIndex : 0);
+  const openLightbox = (index: number) => {
+    setSelectedPhotoIndex(index);
   };
 
   const closeLightbox = () => {
@@ -251,20 +109,46 @@ export default function StageGallerySection() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [selectedPhotoIndex, nextPhoto, prevPhoto]);
 
+  // Subtle Educational Theater Principles
+  const theaterPrinciples = [
+    {
+      icon: BookOpen,
+      titleEs: 'Inmersión Lingüística Natural',
+      titleEn: 'Natural Language Immersion',
+      descEs: 'El contexto visual, corporal y escénico permite que los estudiantes comprendan el español sin traducción, fortaleciendo la escucha activa.',
+      descEn: 'Visual, physical, and dramatic context allows students to understand Spanish organically without translation, strengthening active listening.'
+    },
+    {
+      icon: Compass,
+      titleEs: 'Pensamiento Crítico y Valores',
+      titleEn: 'Critical Thinking & Values',
+      descEs: 'A través de las aventuras de Don Quijote, los jóvenes reflexionan sobre la empatía, el honor, la justicia social y el valor de perseverar.',
+      descEn: 'Through Don Quixote’s journey, youth reflect on empathy, honor, social justice, and the courage to persevere against all odds.'
+    },
+    {
+      icon: MessageSquare,
+      titleEs: 'Participación y Diálogo Horizontal',
+      titleEn: 'Active Student Engagement',
+      descEs: 'Romper la cuarta pared y dialogar en la tertulia posterior transforma al estudiante en interlocutor activo de su propio aprendizaje.',
+      descEn: 'Breaking the fourth wall and engaging in the post-show talkback turns students from passive listeners into active participants.'
+    }
+  ];
+
   return (
-    <section id="galeria-teatral" className="relative py-14 sm:py-20 bg-[#FAF7F0] border-b-2 border-amber-300/70">
+    <section id="galeria-teatral" className="relative py-16 sm:py-24 bg-[#FAF7F0] border-b-2 border-amber-300/70 overflow-hidden">
+      {/* Ambient theatrical spotlight glow in the background */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-96 theatre-stage-glow pointer-events-none -z-0" />
       
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* Header */}
-        <div className="max-w-2xl mx-auto text-center mb-8">
-          <div className="inline-flex items-center gap-2 text-xs font-sans font-bold tracking-wider uppercase bg-amber-100/80 text-[#1E3A8A] mb-2.5 px-3.5 py-1 rounded-full border border-amber-300">
-            <Camera className="w-3.5 h-3.5 text-[#9E1B32]" />
-            <span>{isSpanish ? 'Fotografía de la Obra en Vivo' : 'Live Stage Photography'}</span>
-            <span className="font-mono text-[#9E1B32]">· {STAGE_PHOTOS.length} {isSpanish ? 'fotos' : 'photos'}</span>
+        <div className="max-w-2xl mx-auto text-center mb-12">
+          <div className="inline-flex items-center gap-2 text-xs font-sans font-bold tracking-wider uppercase bg-gradient-to-r from-amber-100 via-amber-200/70 to-amber-100 text-amber-950 mb-3 px-4 py-1.5 rounded-full border border-amber-300/90 shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-[#9E1B32] animate-pulse" />
+            <span>{isSpanish ? 'Magia Escénica · Teatro Educativo en Vivo' : 'Stage Magic · Live Educational Theatre'}</span>
           </div>
           
-          <h2 className="font-cinzel text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-stone-900 leading-tight">
+          <h2 className="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-900 leading-tight">
             {isSpanish ? (
               <>
                 <span className="text-[#1E3A8A]">Don Quijote </span>
@@ -278,63 +162,28 @@ export default function StageGallerySection() {
             )}
           </h2>
           
-          <p className="font-sans text-sm sm:text-base text-stone-600 mt-2">
+          <p className="font-serif italic text-base sm:text-lg text-stone-700 mt-3 max-w-xl mx-auto leading-relaxed">
             {isSpanish
-              ? 'Imágenes reales de la obra escolar y la tertulia con estudiantes en auditorios de Estados Unidos.'
-              : 'Authentic photos from school performances and interactive student Q&As across US schools.'}
+              ? '«El arte del teatro clásico transformado en una vivencia formativa que enciende la imaginación en los auditorios escolares.»'
+              : '“The art of classical theatre transformed into an educational journey that ignites young minds across school auditoriums.”'}
           </p>
         </div>
 
-        {/* 3 Simple Category Filter Buttons */}
-        <div className="flex items-center justify-center gap-2 mb-8">
-          <button
-            type="button"
-            onClick={() => setSelectedFilter('all')}
-            className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer border ${
-              selectedFilter === 'all'
-                ? 'bg-[#9E1B32] text-white border-[#730E20] shadow-xs'
-                : 'bg-white text-stone-700 border-amber-300 hover:bg-amber-50'
-            }`}
-          >
-            {isSpanish ? `Todas (${STAGE_PHOTOS.length})` : `All (${STAGE_PHOTOS.length})`}
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setSelectedFilter('stage')}
-            className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer border flex items-center gap-1.5 ${
-              selectedFilter === 'stage'
-                ? 'bg-[#1E3A8A] text-white border-blue-900 shadow-xs'
-                : 'bg-white text-stone-700 border-amber-300 hover:bg-blue-50'
-            }`}
-          >
-            <Drama className="w-3.5 h-3.5" />
-            <span>{isSpanish ? 'Función Teatral' : 'Performance'}</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setSelectedFilter('talk')}
-            className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer border flex items-center gap-1.5 ${
-              selectedFilter === 'talk'
-                ? 'bg-emerald-700 text-white border-emerald-900 shadow-xs'
-                : 'bg-white text-stone-700 border-amber-300 hover:bg-emerald-50'
-            }`}
-          >
-            <MessageSquare className="w-3.5 h-3.5" />
-            <span>{isSpanish ? 'Tertulia con Alumnos' : 'Student Q&A'}</span>
-          </button>
-        </div>
-
-        {/* Crisp Photographic Grid - 3 columns on tablet/desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-          {filteredPhotos.map((photo, index) => (
+        {/* 3 FEATURED PHOTOGRAPHS WITH THEATRICAL MAGIC FRAME */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 mb-14">
+          {STAGE_PHOTOS.map((photo, index) => (
             <div
               key={photo.id}
-              onClick={() => openLightbox(index)}
-              className="group relative rounded-xl overflow-hidden cursor-pointer border-2 border-amber-300/80 bg-stone-900 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="bg-white rounded-2xl overflow-hidden border-2 border-amber-300/60 hover:border-amber-400 hover:magic-gold-aura transition-all duration-500 shadow-md hover:-translate-y-1.5 flex flex-col group relative"
             >
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-black">
+              {/* Subtle top golden light line */}
+              <div className="h-1 bg-gradient-to-r from-amber-300 via-[#9E1B32] to-amber-300" />
+
+              {/* Image Container */}
+              <div 
+                className="relative aspect-4/3 overflow-hidden bg-stone-950 cursor-pointer"
+                onClick={() => openLightbox(index)}
+              >
                 <img
                   src={photo.src}
                   alt={isSpanish ? photo.titleEs : photo.titleEn}
@@ -347,38 +196,103 @@ export default function StageGallerySection() {
                       target.src = photo.fallbackSrc;
                     }
                   }}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-700 ease-out filter brightness-95 group-hover:brightness-105"
                 />
 
-                {/* Subtle bottom gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent pointer-events-none" />
 
-                {/* Top Badge */}
+                {/* Top Badge with subtle theatrical glow */}
                 <div className="absolute top-3 left-3 z-10">
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider bg-black/70 backdrop-blur-xs text-amber-300 px-2.5 py-0.5 rounded-full border border-amber-400/40">
-                    {isSpanish ? photo.tagEs : photo.tagEn}
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider bg-black/80 backdrop-blur-xs text-amber-300 px-3 py-1 rounded-full border border-amber-400/60 shadow-md flex items-center gap-1">
+                    <span>✧</span>
+                    <span>{isSpanish ? photo.tagEs : photo.tagEn}</span>
                   </span>
                 </div>
 
-                {/* Top Right Zoom Icon */}
+                {/* Zoom Icon */}
                 <div className="absolute top-3 right-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="w-7 h-7 rounded-full bg-white/90 text-stone-900 flex items-center justify-center shadow-md">
-                    <Maximize2 className="w-3.5 h-3.5 text-[#9E1B32]" />
+                  <div className="w-8 h-8 rounded-full bg-white/95 text-stone-900 flex items-center justify-center shadow-lg">
+                    <Maximize2 className="w-4 h-4 text-[#9E1B32]" />
                   </div>
                 </div>
+              </div>
 
-                {/* Caption */}
-                <div className="absolute bottom-0 inset-x-0 p-3.5 text-white z-10">
-                  <h3 className="font-cinzel text-base font-bold text-white group-hover:text-amber-200 transition-colors leading-tight">
+              {/* Caption and Information */}
+              <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between bg-gradient-to-b from-white to-amber-50/30">
+                <div>
+                  <div className="text-[11px] font-mono text-[#9E1B32] font-semibold uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                    <span>{isSpanish ? 'Momento Teatral' : 'Stage Highlight'} {index + 1}</span>
+                  </div>
+                  <h3 className="font-cinzel text-lg sm:text-xl font-bold text-stone-900 group-hover:text-[#9E1B32] transition-colors leading-snug">
                     {isSpanish ? photo.titleEs : photo.titleEn}
                   </h3>
-                  <p className="font-sans text-xs text-stone-300 mt-1 line-clamp-1">
+                  <p className="font-sans text-xs sm:text-sm text-stone-600 mt-2 leading-relaxed">
                     {isSpanish ? photo.descEs : photo.descEn}
                   </p>
+                </div>
+
+                <div className="mt-5 pt-3.5 border-t border-amber-200/60 flex items-center justify-between text-xs">
+                  <button
+                    type="button"
+                    onClick={() => openLightbox(index)}
+                    className="text-[#1E3A8A] font-bold hover:text-[#9E1B32] transition-colors cursor-pointer flex items-center gap-1.5"
+                  >
+                    <span>{isSpanish ? 'Ver en detalle' : 'View full frame'}</span>
+                    <Maximize2 className="w-3 h-3" />
+                  </button>
+                  <a
+                    href={photo.externalLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-stone-400 hover:text-amber-700 transition-colors flex items-center gap-1 text-[11px] font-mono"
+                  >
+                    <span>HD</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* SUBTLE EDUCATIONAL THEATER PRINCIPLES APPLIED TO DON QUIJOTE EN USA */}
+        <div className="relative bg-gradient-to-br from-white via-amber-50/70 to-rose-50/40 border-2 border-amber-300/80 rounded-3xl p-6 sm:p-10 shadow-lg overflow-hidden">
+          {/* Subtle decorative background watermarks */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-amber-200/20 rounded-full blur-3xl pointer-events-none" />
+          
+          <div className="relative z-10 text-center max-w-xl mx-auto mb-8">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#9E1B32] bg-white px-3.5 py-1 rounded-full border border-amber-300 shadow-2xs inline-flex items-center gap-1.5">
+              <Sparkles className="w-3 h-3 text-amber-500" />
+              <span>{isSpanish ? 'Fundamentos Pedagógicos' : 'Educational Theatre Principles'}</span>
+            </span>
+            <h3 className="font-cinzel text-xl sm:text-2xl lg:text-3xl font-bold text-stone-900 mt-2.5">
+              {isSpanish ? 'El Teatro Educativo en Don Quijote en USA' : 'Educational Theatre in Don Quixote in USA'}
+            </h3>
+            <div className="w-16 h-0.5 bg-gradient-to-r from-amber-400 to-[#9E1B32] mx-auto mt-3 rounded-full" />
+          </div>
+
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {theaterPrinciples.map((principle) => {
+              const Icon = principle.icon;
+              return (
+                <div 
+                  key={principle.titleEs}
+                  className="bg-white/95 border border-amber-200 rounded-2xl p-6 shadow-xs hover:shadow-md hover:border-amber-400 transition-all duration-300 flex flex-col items-start group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-100 to-amber-200/60 text-[#9E1B32] flex items-center justify-center mb-3.5 shadow-2xs border border-amber-300/60 group-hover:scale-105 transition-transform">
+                    <Icon className="w-5 h-5 text-[#9E1B32]" />
+                  </div>
+                  <h4 className="font-cinzel text-base sm:text-lg font-bold text-stone-900 mb-2 group-hover:text-[#1E3A8A] transition-colors">
+                    {isSpanish ? principle.titleEs : principle.titleEn}
+                  </h4>
+                  <p className="font-sans text-xs sm:text-sm text-stone-600 leading-relaxed">
+                    {isSpanish ? principle.descEs : principle.descEn}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
       </div>

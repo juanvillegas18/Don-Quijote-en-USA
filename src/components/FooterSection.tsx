@@ -34,7 +34,7 @@ export default function FooterSection() {
                 Don Quijote en USA
               </span>
               <span className="text-[10px] font-sans font-bold bg-amber-500/20 text-amber-300 px-2.5 py-0.5 rounded-full border border-amber-500/30 uppercase tracking-wider">
-                Teatro Cervantino
+                Teatro Educativo
               </span>
             </div>
             
