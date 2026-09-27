@@ -3,46 +3,79 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from 'react';
-import Navbar from './components/Navbar';
+import React, { useState } from 'react';
+import Navbar, { ActiveTab } from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import EventOverviewSection from './components/EventOverviewSection';
 import SocialAndContactSection from './components/SocialAndContactSection';
 import FooterSection from './components/FooterSection';
+import FAQPage from './components/FAQPage';
+import CurriculumPage from './components/CurriculumPage';
+import AssemblyPlannerPage from './components/AssemblyPlannerPage';
+import TeacherEmailGeneratorPage from './components/TeacherEmailGeneratorPage';
+import AboutUsPage from './components/AboutUsPage';
 
 export default function App() {
-  const handleScrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
+  const [activeTab, setActiveTab] = useState<ActiveTab>('home');
+
+  const handleNavigateTab = (tab: ActiveTab) => {
+    setActiveTab(tab);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#1C1917] font-sans selection:bg-[#7A1C2C] selection:text-white flex flex-col antialiased">
+    <div className="min-h-screen bg-[#FCF9F2] text-stone-900 font-sans selection:bg-[#9E1B32] selection:text-white flex flex-col antialiased">
       
-      {/* 1. Header with direct Zeffy RSVP integration */}
+      {/* 1. Header with Tab Navigation & Direct Zeffy Reservation */}
       <Navbar
-        onScrollToOverview={() => handleScrollToSection('event-overview')}
-        onScrollToCurriculum={() => handleScrollToSection('event-overview')}
-        onScrollToBooking={() => handleScrollToSection('booking-contact')}
+        activeTab={activeTab}
+        setActiveTab={handleNavigateTab}
       />
 
       <main className="grow">
-        {/* 2. Hero: Title, Official Synopsis, Key Specs, Promo Code RSVP & Booking CTA */}
-        <HeroSection
-          onOverviewClick={() => handleScrollToSection('event-overview')}
-          onCurriculumClick={() => handleScrollToSection('event-overview')}
-        />
+        {/* TAB 1: THE SHOW (Streamlined, Effective Landing Page) */}
+        {activeTab === 'home' && (
+          <>
+            <HeroSection onNavigateTab={handleNavigateTab} />
+            <EventOverviewSection onNavigateTab={handleNavigateTab} />
+            <SocialAndContactSection />
+          </>
+        )}
 
-        {/* 3. Comprehensive Event Overview & Standards Alignment for Educators */}
-        <EventOverviewSection />
+        {/* TAB 2: ABOUT US (BIOGRAPHIES) */}
+        {activeTab === 'about' && (
+          <AboutUsPage />
+        )}
 
-        {/* 4. Booking & Direct Contact (Zeffy Integration, Emails & Official Channels) */}
-        <SocialAndContactSection />
+        {/* TAB 3: STANDARDS & AP CURRICULUM */}
+        {activeTab === 'standards' && (
+          <CurriculumPage />
+        )}
+
+        {/* TAB 4: ASSEMBLY PLANNER & PROPOSAL GENERATOR */}
+        {activeTab === 'planner' && (
+          <AssemblyPlannerPage />
+        )}
+
+        {/* TAB 5: FREQUENTLY ASKED QUESTIONS (DEDICATED PAGE) */}
+        {activeTab === 'faq' && (
+          <FAQPage />
+        )}
+
+        {/* TAB 6: GENERADOR DE EMAIL PARA PROFESORES (LEADS) */}
+        {activeTab === 'email-generator' && (
+          <TeacherEmailGeneratorPage />
+        )}
+
+        {/* TAB 7: OFFICIAL BOOKING & VENDOR INFO (EIN) */}
+        {activeTab === 'contact' && (
+          <div className="pt-16">
+            <SocialAndContactSection />
+          </div>
+        )}
       </main>
 
-      {/* 5. Dignified Educational Theater Footer */}
+      {/* 2. Spanish Golden Age Dignified Footer */}
       <FooterSection />
 
     </div>

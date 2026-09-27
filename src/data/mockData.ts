@@ -201,19 +201,11 @@ export const TECHNICAL_DATA = {
   domain: 'donquijoteusa.com'
 };
 
-export const GOVERNMENT_CREDENTIALS = {
-  federal: {
-    system: 'SAM.gov (Gobierno Federal de EE. UU.)',
-    uei: 'FJV5QQ2QM9M8',
-    cage: '1Z2Q0',
-    status: 'Activo / Registrado'
-  },
-  puertoRico: {
-    system: 'Gobierno de Puerto Rico (RUP)',
-    rupNumber: '202561897',
-    status: 'Proveedor de Servicios Profesionales Registrado'
-  },
-  complianceNotes: 'Aceptamos Órdenes de Compra (Purchase Orders / PO), fondos Title I, Title II, Title III, Title IV, SIG, ESSER y subvenciones culturales de distritos escolares y universidades.'
+export const ORGANIZATION_CREDENTIALS = {
+  entityName: 'Teatro for the Soul Inc',
+  ein: '81-4825762',
+  email: 'teatroforthesoul@gmail.com',
+  complianceNotes: 'Aceptamos Órdenes de Compra (Purchase Orders / PO), fondos Title I, Title II, Title III, Title IV y subvenciones culturales de distritos escolares y universidades.'
 };
 
 export interface FundingSource {

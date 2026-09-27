@@ -5,20 +5,26 @@
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-display: "Cinzel", Georgia, serif;
 
-  --color-brand-wine: #7A1C2C;
-  --color-brand-wine-dark: #58121E;
-  --color-brand-gold: #B8860B;
-  --color-brand-gold-light: #D4AF37;
-  --color-brand-parchment: #FAF8F5;
-  --color-brand-ivory: #FDFBF7;
+  --color-brand-wine: #9E1B32;
+  --color-brand-wine-dark: #730E20;
+  --color-brand-wine-light: #C22D47;
+  --color-brand-gold: #D97706;
+  --color-brand-gold-light: #F59E0B;
+  --color-brand-amber: #FBBF24;
+  --color-brand-blue: #2563EB;
+  --color-brand-indigo: #4F46E5;
+  --color-brand-emerald: #059669;
+  --color-brand-orange: #EA580C;
+  --color-brand-parchment: #FCF9F2;
+  --color-brand-ivory: #FFFDF9;
   --color-brand-ink: #1C1917;
-  --color-brand-slate: #44403C;
-  --color-brand-border: #E7E2D8;
+  --color-brand-slate: #334155;
+  --color-brand-border: #E5DEC9;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #FAF8F5;
+  background-color: #FCF9F2;
   color: #1C1917;
 }
 
@@ -31,53 +37,70 @@ html {
   font-family: var(--font-serif);
 }
 
-/* Elegant Buttons for Educators */
+/* Vibrant Spanish Golden Age Buttons for Educators */
 .btn-primary-wine {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #7A1C2C;
+  background: linear-gradient(135deg, #9E1B32 0%, #B91C1C 50%, #C22D47 100%);
   color: #FFFFFF;
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 0.8125rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   padding: 0.75rem 1.6rem;
-  border: 1px solid #58121E;
-  border-radius: 3px;
-  box-shadow: 0 2px 10px rgba(122, 28, 44, 0.2);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid #730E20;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(158, 27, 50, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
 
 .btn-primary-wine:hover {
-  background-color: #631422;
-  box-shadow: 0 4px 16px rgba(122, 28, 44, 0.3);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #B91C1C 0%, #DC2626 50%, #E11D48 100%);
+  box-shadow: 0 6px 20px rgba(185, 28, 28, 0.45);
+  transform: translateY(-1.5px);
 }
 
 .btn-gold-accent {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #B8860B 0%, #996D05 100%);
-  color: #FFFFFF;
+  background: linear-gradient(135deg, #D97706 0%, #F59E0B 50%, #FBBF24 100%);
+  color: #78350F;
   font-family: var(--font-sans);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.8125rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   padding: 0.75rem 1.6rem;
-  border: 1px solid #8A6204;
-  border-radius: 3px;
-  box-shadow: 0 2px 10px rgba(184, 134, 11, 0.25);
+  border: 1px solid #B45309;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3);
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
 .btn-gold-accent:hover {
-  background: linear-gradient(135deg, #CA930C 0%, #A87706 100%);
-  box-shadow: 0 4px 14px rgba(184, 134, 11, 0.35);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.45);
+  transform: translateY(-1.5px);
+}
+
+.btn-blue-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1E40AF 0%, #2563EB 50%, #3B82F6 100%);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #1E3A8A;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .btn-outline-refined {
@@ -87,26 +110,58 @@ html {
   background-color: #FFFFFF;
   color: #1C1917;
   font-family: var(--font-sans);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.8125rem;
   letter-spacing: 0.02em;
   padding: 0.75rem 1.4rem;
-  border: 1px solid #D6D0C4;
-  border-radius: 3px;
+  border: 1.5px solid #D6CEB8;
+  border-radius: 6px;
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
 .btn-outline-refined:hover {
-  background-color: #F5F1E9;
-  border-color: #7A1C2C;
-  color: #7A1C2C;
+  background-color: #FEF2F2;
+  border-color: #9E1B32;
+  color: #9E1B32;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(158, 27, 50, 0.15);
 }
 
-/* Subtle parchment card texture */
-.card-dossier {
+/* Spanish Golden Age Spectrum Ribbon */
+.rainbow-gradient-bar {
+  background: linear-gradient(90deg, #9E1B32 0%, #EA580C 18%, #F59E0B 36%, #10B981 54%, #2563EB 72%, #7C3AED 90%, #9E1B32 100%);
+}
+
+/* Spanish Golden Age Tile & Arabesque Accent */
+.spanish-border-gold {
+  border: 2px solid #D97706;
+  box-shadow: 0 0 0 1px #FDE68A, inset 0 0 0 1px #FDE68A;
+}
+
+/* Illuminated Chapter Heading Banner */
+.cervantes-chapter-badge {
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+  border: 1.5px solid #D97706;
+  color: #92400E;
+}
+
+/* Spanish Chivalric Ornamental Border */
+.ornate-card {
+  position: relative;
   background-color: #FFFFFF;
-  border: 1px solid #E7E2D8;
-  border-radius: 3px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  border: 2px solid #E5DEC9;
+  border-radius: 8px;
+}
+
+.ornate-card::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1px dashed rgba(217, 119, 6, 0.25);
+  border-radius: 6px;
+  pointer-events: none;
 }
