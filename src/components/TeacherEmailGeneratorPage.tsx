@@ -604,32 +604,32 @@ Sitio Web: https://www.donquijoteenusa.com`;
               <div className="flex flex-wrap items-center gap-2">
                 <button
                   type="button"
-                  onClick={handleOpenGmail}
-                  className="btn-primary-wine text-xs py-2 px-3.5 flex items-center gap-1.5 font-bold shadow-xs cursor-pointer"
-                  title="Abre Gmail con destinatario y mensaje cargado"
-                >
-                  <Send className="w-3.5 h-3.5 text-amber-300" />
-                  <span>Abrir en Gmail</span>
-                  <ExternalLink className="w-3 h-3 opacity-90" />
-                </button>
-
-                <button
-                  type="button"
                   onClick={handleCopyRichText}
-                  className="btn-gold-accent text-xs py-2 px-3 flex items-center gap-1.5 font-bold shadow-xs cursor-pointer"
-                  title="Copia con formato y colores para pegar en Gmail"
+                  className="btn-gold-accent text-xs py-2 px-3.5 flex items-center gap-1.5 font-bold shadow-xs cursor-pointer ring-2 ring-amber-400"
+                  title="Copia con formato e imágenes para pegar directamente en Gmail"
                 >
                   {copiedRichText ? (
                     <>
                       <Check className="w-3.5 h-3.5 text-emerald-800" />
-                      <span className="text-emerald-950">¡Copiado a Color!</span>
+                      <span className="text-emerald-950">¡Copiado con Imágenes!</span>
                     </>
                   ) : (
                     <>
                       <Sparkles className="w-3.5 h-3.5 text-amber-900" />
-                      <span>Copiar con Formato</span>
+                      <span>Copiar para Gmail (con Imágenes)</span>
                     </>
                   )}
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleOpenGmail}
+                  className="btn-primary-wine text-xs py-2 px-3.5 flex items-center gap-1.5 font-bold shadow-xs cursor-pointer"
+                  title="Abre Gmail para redactar"
+                >
+                  <Send className="w-3.5 h-3.5 text-amber-300" />
+                  <span>Abrir Gmail</span>
+                  <ExternalLink className="w-3 h-3 opacity-90" />
                 </button>
 
                 <button
